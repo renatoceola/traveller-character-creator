@@ -1,0 +1,247 @@
+{
+  "careers": [
+    {
+      "id": "navy",
+      "name": "Navy",
+      "description": "The Imperial Navy protects the vast interstellar empire",
+      "qualification": {
+        "characteristic": "INT",
+        "target": 6,
+        "dm": {
+          "EDU": { "8+": 1, "9+": 2 }
+        }
+      },
+      "survival": {
+        "characteristic": "INT",
+        "target": 5,
+        "dm": {
+          "EDU": { "8+": 2 }
+        }
+      },
+      "advancement": {
+        "characteristic": "EDU",
+        "target": 7,
+        "dm": {
+          "INT": { "8+": 1 }
+        }
+      },
+      "assignments": [
+        {
+          "id": "line-crew",
+          "name": "Line/Crew",
+          "description": "Ship operations and maintenance",
+          "skillTable": ["Electronics", "Pilot", "Gunner", "Flyer", "Melee", "Vacc Suit"]
+        },
+        {
+          "id": "engineering",
+          "name": "Engineering",
+          "description": "Ship systems and engineering",
+          "skillTable": ["Engineer", "Mechanic", "Electronics", "Pilot", "Vacc Suit", "Science"]
+        },
+        {
+          "id": "gunnery",
+          "name": "Gunnery",
+          "description": "Ship weapons and tactical systems",
+          "skillTable": ["Gunner", "Electronics", "Engineer", "Pilot", "Vacc Suit", "Tactics"]
+        }
+      ],
+      "skillTables": {
+        "personal": ["Gun Combat", "Athletics", "Melee", "Flyer", "Vacc Suit", "Streetwise"],
+        "service": ["Pilot", "Vacc Suit", "Athletics", "Gunner", "Mechanic", "Gun Combat"],
+        "advanced": ["Electronics", "Astrogation", "Engineer", "Drive", "Flyer", "Navigation"]
+      },
+      "ranks": [
+        { "id": 0, "name": "Crewman", "title": "Crewman" },
+        { "id": 1, "name": "Able Spacer", "title": "Able Spacer", "bonus": { "skill": "Mechanic", "level": 1 } },
+        { "id": 2, "name": "Petty Officer", "title": "Petty Officer", "bonus": { "skill": "Vacc Suit", "level": 1 } },
+        { "id": 3, "name": "Chief Petty Officer", "title": "Chief Petty Officer" },
+        { "id": 4, "name": "Master Chief", "title": "Master Chief" },
+        { "id": 5, "name": "Lieutenant", "title": "Lieutenant", "bonus": { "skill": "Leadership", "level": 1 } },
+        { "id": 6, "name": "Commander", "title": "Commander" }
+      ]
+    },
+    {
+      "id": "army",
+      "name": "Army",
+      "description": "Ground forces defending planetary systems",
+      "qualification": {
+        "characteristic": "END",
+        "target": 5,
+        "dm": {
+          "STR": { "8+": 1 },
+          "DEX": { "8+": 2 }
+        }
+      },
+      "survival": {
+        "characteristic": "END",
+        "target": 6,
+        "dm": {
+          "EDU": { "8+": 2 }
+        }
+      },
+      "advancement": {
+        "characteristic": "EDU",
+        "target": 6,
+        "dm": {
+          "SOC": { "8+": 1 }
+        }
+      },
+      "assignments": [
+        {
+          "id": "support",
+          "name": "Support",
+          "description": "Logistics and support operations",
+          "skillTable": ["Mechanic", "Drive", "Electronics", "Explosives", "Gun Combat", "Recon"]
+        },
+        {
+          "id": "infantry",
+          "name": "Infantry",
+          "description": "Front-line combat troops",
+          "skillTable": ["Gun Combat", "Melee", "Heavy Weapons", "Stealth", "Athletics", "Recon"]
+        },
+        {
+          "id": "cavalry",
+          "name": "Cavalry",
+          "description": "Armored and mobile units",
+          "skillTable": ["Mechanic", "Drive", "Flyer", "Gun Combat", "Recon", "Heavy Weapons"]
+        }
+      ],
+      "skillTables": {
+        "personal": ["Gun Combat", "Athletics", "Melee", "Gambling", "Brawl", "Blade Combat"],
+        "service": ["Drive", "Athletics", "Gun Combat", "Recon", "Melee", "Heavy Weapons"],
+        "advanced": ["Electronics", "Navigation", "Explosives", "Engineer", "Survival", "Tactics"]
+      },
+      "ranks": [
+        { "id": 0, "name": "Private", "title": "Private" },
+        { "id": 1, "name": "Lance Corporal", "title": "Lance Corporal", "bonus": { "skill": "Gun Combat", "level": 1 } },
+        { "id": 2, "name": "Corporal", "title": "Corporal" },
+        { "id": 3, "name": "Lance Sergeant", "title": "Lance Sergeant", "bonus": { "skill": "Leadership", "level": 1 } },
+        { "id": 4, "name": "Sergeant", "title": "Sergeant" },
+        { "id": 5, "name": "Lieutenant", "title": "Lieutenant", "bonus": { "skill": "Tactics", "level": 1 } },
+        { "id": 6, "name": "Captain", "title": "Captain" }
+      ]
+    },
+    {
+      "id": "marines",
+      "name": "Marines",
+      "description": "Elite amphibious assault forces",
+      "qualification": {
+        "characteristic": "END",
+        "target": 6,
+        "dm": {
+          "STR": { "8+": 1 },
+          "INT": { "8+": 2 }
+        }
+      },
+      "survival": {
+        "characteristic": "END",
+        "target": 6,
+        "dm": {
+          "INT": { "8+": 2 }
+        }
+      },
+      "advancement": {
+        "characteristic": "SOC",
+        "target": 7,
+        "dm": {
+          "EDU": { "8+": 1 }
+        }
+      },
+      "assignments": [
+        {
+          "id": "support",
+          "name": "Support",
+          "description": "Engineering and technical support",
+          "skillTable": ["Electronics", "Mechanic", "Drive", "Vacc Suit", "Gun Combat", "Flyer"]
+        },
+        {
+          "id": "star-marine",
+          "name": "Star Marine",
+          "description": "Space-based assault troops",
+          "skillTable": ["Vacc Suit", "Athletics", "Gun Combat", "Melee", "Electronics", "Gunner"]
+        },
+        {
+          "id": "ground-assault",
+          "name": "Ground Assault",
+          "description": "Planetary assault specialists",
+          "skillTable": ["Gun Combat", "Melee", "Heavy Weapons", "Stealth", "Recon", "Tactics"]
+        }
+      ],
+      "skillTables": {
+        "personal": ["Gun Combat", "Athletics", "Melee", "Gambling", "Brawl", "Blade Combat"],
+        "service": ["Athletics", "Vacc Suit", "Electronics", "Gun Combat", "Gunner", "Melee"],
+        "advanced": ["Electronics", "Navigation", "Engineer", "Drive", "Pilot", "Tactics"]
+      },
+      "ranks": [
+        { "id": 0, "name": "Marine", "title": "Marine" },
+        { "id": 1, "name": "Lance Corporal", "title": "Lance Corporal", "bonus": { "skill": "Gun Combat", "level": 1 } },
+        { "id": 2, "name": "Corporal", "title": "Corporal" },
+        { "id": 3, "name": "Lance Sergeant", "title": "Lance Sergeant", "bonus": { "skill": "Leadership", "level": 1 } },
+        { "id": 4, "name": "Sergeant", "title": "Sergeant" },
+        { "id": 5, "name": "Gunnery Sergeant", "title": "Gunnery Sergeant", "bonus": { "skill": "Tactics", "level": 1 } },
+        { "id": 6, "name": "Major", "title": "Major" }
+      ]
+    },
+    {
+      "id": "merchant",
+      "name": "Merchant",
+      "description": "Commercial trade and transport",
+      "qualification": {
+        "characteristic": "STR",
+        "target": 4,
+        "dm": {
+          "INT": { "8+": 1 },
+          "EDU": { "8+": 2 }
+        }
+      },
+      "survival": {
+        "characteristic": "EDU",
+        "target": 5,
+        "dm": {
+          "INT": { "8+": 2 }
+        }
+      },
+      "advancement": {
+        "characteristic": "INT",
+        "target": 7,
+        "dm": {
+          "EDU": { "8+": 1 }
+        }
+      },
+      "assignments": [
+        {
+          "id": "merchant-marine",
+          "name": "Merchant Marine",
+          "description": "Interstellar trade operations",
+          "skillTable": ["Pilot", "Vacc Suit", "Athletics", "Mechanic", "Engineer", "Electronics"]
+        },
+        {
+          "id": "free-trader",
+          "name": "Free Trader",
+          "description": "Independent trading operations",
+          "skillTable": ["Pilot", "Persuade", "Streetwise", "Broker", "Gun Combat", "Engineer"]
+        },
+        {
+          "id": "broker",
+          "name": "Broker",
+          "description": "Commercial negotiations and deals",
+          "skillTable": ["Broker", "Admin", "Advocate", "Streetwise", "Deception", "Persuade"]
+        }
+      ],
+      "skillTables": {
+        "personal": ["Drive", "Vacc Suit", "Broker", "Streetwise", "Steward", "Melee"],
+        "service": ["Pilot", "Engineer", "Gunner", "Mechanic", "Broker", "Astrogation"],
+        "advanced": ["Engineer", "Admin", "Investigate", "Broker", "Streetwise", "Navigation"]
+      },
+      "ranks": [
+        { "id": 0, "name": "Crewman", "title": "Crewman" },
+        { "id": 1, "name": "Senior Crewman", "title": "Senior Crewman", "bonus": { "skill": "Mechanic", "level": 1 } },
+        { "id": 2, "name": "4th Officer", "title": "4th Officer" },
+        { "id": 3, "name": "3rd Officer", "title": "3rd Officer", "bonus": { "skill": "Electronics", "level": 1 } },
+        { "id": 4, "name": "2nd Officer", "title": "2nd Officer" },
+        { "id": 5, "name": "1st Officer", "title": "1st Officer", "bonus": { "skill": "Pilot", "level": 1 } },
+        { "id": 6, "name": "Captain", "title": "Captain" }
+      ]
+    }
+  ]
+}

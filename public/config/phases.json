@@ -1,0 +1,114 @@
+[
+  {
+    "name": "character-creation",
+    "title": "Character Creation",
+    "description": "Create your basic character with characteristics and species",
+    "order": 0,
+    "steps": [
+      {
+        "id": "roll-characteristics",
+        "title": "Roll Characteristics",
+        "description": "Roll or assign your character's six basic characteristics",
+        "component": "RollCharacteristicsStep",
+        "validation": ["valid-characteristics"]
+      },
+      {
+        "id": "choose-species",
+        "title": "Choose Species",
+        "description": "Select your character's species and apply modifiers",
+        "component": "ChooseSpeciesStep",
+        "validation": ["required-species"],
+        "dependencies": ["roll-characteristics"]
+      },
+      {
+        "id": "character-details",
+        "title": "Character Details",
+        "description": "Enter your character's name and background details",
+        "component": "CharacterDetailsStep",
+        "validation": ["required-name"],
+        "dependencies": ["choose-species"]
+      }
+    ]
+  },
+  {
+    "name": "background-skills",
+    "title": "Background Skills", 
+    "description": "Select your character's pre-career background and starting skills",
+    "order": 1,
+    "steps": [
+      {
+        "id": "homeworld",
+        "title": "Homeworld",
+        "description": "Choose your character's homeworld and gain associated skills",
+        "component": "HomeworldStep",
+        "dependencies": ["character-details"]
+      },
+      {
+        "id": "education",
+        "title": "Education",
+        "description": "Determine your character's educational background (University, Military Academy, or none)",
+        "component": "EducationStep", 
+        "dependencies": ["homeworld"]
+      }
+    ]
+  },
+  {
+    "name": "career",
+    "title": "Career",
+    "description": "Choose and advance through your character's career",
+    "order": 2,
+    "steps": [
+      {
+        "id": "choose-career",
+        "title": "Choose Career",
+        "description": "Select your character's initial career path",
+        "component": "ChooseCareerStep",
+        "dependencies": ["education"]
+      },
+      {
+        "id": "career-terms",
+        "title": "Career Terms",
+        "description": "Serve terms in your chosen career, gaining skills and benefits",
+        "component": "CareerTermsStep",
+        "dependencies": ["choose-career"]
+      }
+    ]
+  },
+  {
+    "name": "mustering-out",
+    "title": "Mustering Out",
+    "description": "Receive final benefits and equipment upon leaving service",
+    "order": 3,
+    "steps": [
+      {
+        "id": "mustering-benefits",
+        "title": "Mustering Benefits",
+        "description": "Roll for final cash and material benefits",
+        "component": "MusteringBenefitsStep",
+        "dependencies": ["career-terms"]
+      },
+      {
+        "id": "final-details",
+        "title": "Final Details",
+        "description": "Finalize character details and equipment",
+        "component": "FinalDetailsStep",
+        "dependencies": ["mustering-benefits"]
+      }
+    ]
+  },
+  {
+    "name": "completion",
+    "title": "Character Complete",
+    "description": "Your character is ready for adventure!",
+    "order": 4,
+    "steps": [
+      {
+        "id": "character-summary",
+        "title": "Character Summary",
+        "description": "Review your completed character",
+        "component": "CharacterSummaryStep",
+        "dependencies": ["final-details"]
+      }
+    ]
+  }
+]

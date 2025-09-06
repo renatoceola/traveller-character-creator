@@ -1,0 +1,290 @@
+{
+  "version": "2.1.0",
+  "metadata": {
+    "title": "Pre-Career Events Table",
+    "description": "Mongoose Traveller 2nd Edition Pre-Career Events (2D6 table)",
+    "source": "Mongoose Traveller 2nd Edition Core Rulebook",
+    "lastUpdated": "2024-12-28"
+  },
+  "events": [
+    {
+      "roll": 2,
+      "title": "Psionic Contact",
+      "description": "You are approached by an underground (and highly illegal) psionic group who sense potential in you. You may test your PSI and attempt to enter the Psion career in any subsequent term. (see page 236).",
+      "effect": {
+        "type": "test",
+        "description": "Test for PSI characteristic if not already tested. Gain access to Psion career.",
+        "special": "psion_access"
+      },
+      "narrative": {
+        "setup": "A mysterious figure approached them in the shadows, speaking of hidden potential and forbidden knowledge.",
+        "consequence": "This encounter would open doors to powers beyond normal understanding, though at great personal risk.",
+        "worldBuilding": "Psionics remain illegal and heavily persecuted throughout most of known space, making this contact both dangerous and valuable."
+      },
+      "tags": ["psionic", "illegal", "dangerous", "opportunity"]
+    },
+    {
+      "roll": 3,
+      "title": "Deep Tragedy",
+      "description": "Your time in education is not a happy one and you suffer a deep tragedy; perhaps you become hopelessly addicted to drink or drugs, a fatal accident involving a close friend shakes your confidence. You crash and fail to graduate.",
+      "effect": {
+        "type": "failure",
+        "description": "You fail to graduate this term and must leave education immediately.",
+        "mandatory": true
+      },
+      "narrative": {
+        "setup": "Dark clouds gathered over their academic life as tragedy struck without warning.",
+        "consequence": "The trauma shattered their confidence and derailed their educational aspirations, forcing them to leave their studies behind.",
+        "worldBuilding": "Sometimes the universe deals harsh blows to even the most promising students, testing their resilience and forcing new paths."
+      },
+      "tags": ["tragedy", "failure", "mandatory_exit", "trauma"]
+    },
+    {
+      "roll": 4,
+      "title": "Dangerous Prank",
+      "description": "A seemingly harmless prank goes wrong and someone gets hurt, physically or emotionally. Roll SOC 8+. If you succeed, gain a Rival. If you fail, gain an Enemy. If you roll 2, you fail to graduate and must take the Prisoner career in your next term.",
+      "effect": {
+        "type": "choice",
+        "description": "Roll SOC 8+ to determine consequences",
+        "rollRequired": {
+          "characteristic": "SOC",
+          "target": 8,
+          "dice": "2d6"
+        },
+        "outcomes": [
+          {
+            "condition": "success",
+            "effect": "rival",
+            "description": "Gain a Rival (someone was hurt but forgives partially)"
+          },
+          {
+            "condition": "failure",
+            "effect": "enemy", 
+            "description": "Gain an Enemy (someone was seriously hurt and blames you)"
+          },
+          {
+            "condition": "snake_eyes",
+            "effect": "career_forced",
+            "career": "Prisoner",
+            "description": "Fail to graduate and must take Prisoner career next term"
+          }
+        ]
+      },
+      "narrative": {
+        "setup": "What started as innocent fun quickly spiraled out of control, leaving someone seriously hurt.",
+        "consequence": "The aftermath would haunt their relationships and reputation for years to come.",
+        "worldBuilding": "In the close-knit environment of educational institutions, pranks gone wrong can have lasting social consequences."
+      },
+      "tags": ["prank", "social", "consequences", "relationships"]
+    },
+    {
+      "roll": 5,
+      "title": "Party Lifestyle",
+      "description": "Taking advantage of your new freedom, you party as much as you study. Gain Carouse 1.",
+      "effect": {
+        "type": "skill",
+        "skill": "Carouse",
+        "level": 1,
+        "description": "Gain Carouse 1"
+      },
+      "narrative": {
+        "setup": "Freedom from parental supervision led to endless nights of celebration and social gathering.",
+        "consequence": "They learned the art of socializing and celebration, skills that would serve them well in future endeavors.",
+        "worldBuilding": "Student life across the galaxy often involves the same universal experiences of newfound independence and social exploration."
+      },
+      "tags": ["social", "skill_gain", "lifestyle", "positive"]
+    },
+    {
+      "roll": 6,
+      "title": "Tight-Knit Group",
+      "description": "You become involved in a tightly knit clique or group and make a pact to remain friends forever, wherever in the galaxy you may end. Gain D3 Allies.",
+      "effect": {
+        "type": "ally",
+        "count": "1d3",
+        "description": "Gain 1D3 Allies (lifelong friends)"
+      },
+      "narrative": {
+        "setup": "Deep bonds formed with fellow students, creating friendships that would transcend time and distance.",
+        "consequence": "These connections would provide support and opportunities throughout their life, no matter how far they traveled.",
+        "worldBuilding": "In a galaxy where travel between stars can separate people for decades, true friendship becomes incredibly valuable."
+      },
+      "tags": ["friendship", "allies", "bonds", "positive"]
+    },
+    {
+      "roll": 7,
+      "title": "Life Event",
+      "description": "Life Event. Roll on the Life Events table (see page 46).",
+      "effect": {
+        "type": "life_event",
+        "description": "Roll on the Life Events table",
+        "table": "life_events"
+      },
+      "narrative": {
+        "setup": "A significant event occurred that would shape their character in unexpected ways.",
+        "consequence": "This experience added depth and complexity to their personality and worldview.",
+        "worldBuilding": "Life has a way of presenting unexpected challenges and opportunities, even during the relative safety of education."
+      },
+      "tags": ["life_event", "random", "character_development"]
+    },
+    {
+      "roll": 8,
+      "title": "Political Movement",
+      "description": "You join a political movement. Roll SOC 8+. If successful, you become a leading figure. Gain one Ally within the movement and one Enemy in wider society.",
+      "effect": {
+        "type": "choice",
+        "description": "Join political movement - gain Ally and Enemy regardless of success",
+        "rollRequired": {
+          "characteristic": "SOC",
+          "target": 8,
+          "dice": "2d6"
+        },
+        "baseEffects": [
+          {
+            "effect": "ally",
+            "description": "Gain an Ally within the movement"
+          },
+          {
+            "effect": "enemy", 
+            "description": "Gain an Enemy in wider society"
+          }
+        ],
+        "successBonus": {
+          "description": "Become a leading figure in the movement",
+          "benefit": "leadership_position"
+        }
+      },
+      "narrative": {
+        "setup": "Passionate about political change, they threw themselves into a movement that challenged the status quo.",
+        "consequence": "Their activism earned them both devoted allies and bitter enemies, marking them as a person of strong convictions.",
+        "worldBuilding": "Political movements in the 57th century often span multiple star systems, making both allies and enemies potentially galaxy-spanning."
+      },
+      "tags": ["politics", "activism", "leadership", "controversy"]
+    },
+    {
+      "roll": 9,
+      "title": "Hobby Development",
+      "description": "You develop a healthy interest in a hobby or other area of study. Gain any skill of your choice, with the exception of Jack-of-all-Trades, at level 0.",
+      "effect": {
+        "type": "skill_choice",
+        "level": 0,
+        "description": "Gain any skill at level 0 (except Jack-of-all-Trades)",
+        "restrictions": ["Jack-of-all-Trades"]
+      },
+      "narrative": {
+        "setup": "Free time and curiosity led them to explore new areas of knowledge and skill.",
+        "consequence": "This personal interest would provide a foundation for future growth and unexpected opportunities.",
+        "worldBuilding": "Educational institutions encourage well-rounded development, recognizing that diverse interests often lead to innovation."
+      },
+      "tags": ["hobby", "skill_choice", "personal_growth", "positive"]
+    },
+    {
+      "roll": 10,
+      "title": "Research Breakthrough",
+      "description": "A new theory proves you in a totally wrong way and you work hard to overturn their conclusions. Roll 9+ on any skill you have learned during this term. If successful, you provide a truly elegant proof that soon becomes accepted in the learned research. Gain a Rival if you succeed, gain an Enemy if you rolled on any 11+. If you fail, gain a Rival.",
+      "effect": {
+        "type": "choice",
+        "description": "Roll 9+ on any skill learned this term",
+        "rollRequired": {
+          "target": 9,
+          "dice": "2d6",
+          "skillBased": true,
+          "skillSource": "current_term"
+        },
+        "outcomes": [
+          {
+            "condition": "failure",
+            "effect": "rival",
+            "description": "Gain a Rival (your research was flawed)"
+          },
+          {
+            "condition": "success_normal",
+            "effect": "rival",
+            "description": "Gain a Rival (you proved them wrong)"
+          },
+          {
+            "condition": "success_11_plus",
+            "effect": "enemy",
+            "description": "Gain an Enemy (your brilliant proof embarrassed them publicly)"
+          }
+        ],
+        "successBonus": {
+          "description": "Your research becomes accepted in academic circles",
+          "benefit": "academic_recognition"
+        }
+      },
+      "narrative": {
+        "setup": "Academic disagreement ignited their passion for research, driving them to challenge established theories.",
+        "consequence": "Their intellectual courage would earn recognition but also create lasting academic rivalries.",
+        "worldBuilding": "Academic politics can be as cutthroat as any other field, with brilliant discoveries often creating both fame and enemies."
+      },
+      "tags": ["research", "academic", "rivalry", "intellectual"]
+    },
+    {
+      "roll": 11,
+      "title": "War and Draft",
+      "description": "War comes and a wide-ranging draft is instigated. You can either flee and join the Drifter career next term or be drafted (roll 1D: 1-3 Army, 4-5 Marine, 6 Navy). Either way, you do not graduate this term. However, if you roll SOC 9+ you can get conscientious objector status and complete your education – you may attempt graduation normally and are not drafted.",
+      "effect": {
+        "type": "choice",
+        "description": "War draft - choose to flee or be drafted, or attempt conscientious objector status",
+        "rollRequired": {
+          "characteristic": "SOC",
+          "target": 9,
+          "dice": "2d6",
+          "optional": true
+        },
+        "options": [
+          {
+            "requirement": "SOC 9+",
+            "effect": "continue_education",
+            "description": "Gain conscientious objector status and continue education normally"
+          },
+          {
+            "effect": "career_forced",
+            "career": "Drifter",
+            "description": "Flee the draft and join Drifter career (do not graduate)"
+          },
+          {
+            "effect": "career_drafted",
+            "description": "Be drafted into military service (roll 1D: 1-3 Army, 4-5 Marines, 6 Navy, do not graduate)",
+            "draftRoll": "1d6"
+          }
+        ]
+      },
+      "narrative": {
+        "setup": "The drums of war echoed across the galaxy, and the draft notices began arriving at educational institutions.",
+        "consequence": "This moment of choice would define not just their immediate future, but their entire relationship with duty, service, and personal conviction.",
+        "worldBuilding": "Galactic conflicts require massive mobilization efforts, often disrupting the lives of entire generations of students."
+      },
+      "tags": ["war", "draft", "military", "major_choice"]
+    },
+    {
+      "roll": 12,
+      "title": "Academic Recognition",
+      "description": "You gain wide-ranging recognition of your initiative and innovative approach to study. Increase your SOC by +1.",
+      "effect": {
+        "type": "characteristic",
+        "characteristic": "SOC",
+        "modifier": 1,
+        "description": "Gain +1 SOC"
+      },
+      "narrative": {
+        "setup": "Their innovative thinking and academic excellence caught the attention of professors and peers alike.",
+        "consequence": "Recognition of their intellectual abilities elevated their social standing and opened doors to elite circles.",
+        "worldBuilding": "Academic achievement in the 57th century can elevate one's social status across the galaxy, as knowledge and innovation are highly valued."
+      },
+      "tags": ["recognition", "academic", "social_advancement", "positive"]
+    }
+  ],
+  "metadata_extended": {
+    "usage": "Roll 2D6 during education terms to determine pre-career events",
+    "frequency": "Once per education term",
+    "impact": "Can significantly alter character development and future opportunities",
+    "integration": "Events should be resolved immediately and may affect graduation or career choices"
+  },
+  "narrative_themes": {
+    "education": "The formative years of higher learning, where minds are shaped and futures decided",
+    "relationships": "Bonds formed and broken during the intense crucible of academic life",
+    "choices": "Moments of decision that reveal character and determine destiny",
+    "consequences": "Actions taken in youth often have far-reaching implications for adult life"
+  }
+}

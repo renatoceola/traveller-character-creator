@@ -1,0 +1,105 @@
+[
+  {
+    "name": "Human",
+    "description": "The standard human baseline. Humans are adaptable and diverse, found throughout known space.",
+    "modifiers": [],
+    "homeworld": "Terra"
+  },
+  {
+    "name": "Aslan",
+    "description": "Proud feline sophonts known for their honor-based culture and territorial nature.",
+    "modifiers": [
+      {
+        "characteristic": "STR",
+        "modifier": 2
+      },
+      {
+        "characteristic": "DEX",
+        "modifier": -2
+      }
+    ],
+    "specialRules": [
+      "Dewclaw: +1 DM to melee attacks",
+      "Territory: Strong drive to acquire and defend territory"
+    ],
+    "homeworld": "Kusyu"
+  },
+  {
+    "name": "Vargr",
+    "description": "Canine-descended sophonts known for their charismatic leadership and pack mentality.",
+    "modifiers": [
+      {
+        "characteristic": "DEX",
+        "modifier": 1
+      },
+      {
+        "characteristic": "END",
+        "modifier": -2
+      },
+      {
+        "characteristic": "SOC",
+        "modifier": 1
+      }
+    ],
+    "specialRules": [
+      "Pack Mentality: +1 DM to Leadership checks with other Vargr",
+      "Bite: Natural weapon (1D damage)"
+    ],
+    "homeworld": "Lair"
+  },
+  {
+    "name": "Zhodani",
+    "description": "Psychic humans with a rigid caste-based society and powerful psionic abilities.",
+    "modifiers": [
+      {
+        "characteristic": "EDU",
+        "modifier": 2
+      }
+    ],
+    "specialRules": [
+      "Psionic: All Zhodani have psionic potential",
+      "Telepathic Training: +2 DM to Telepathy skill checks"
+    ],
+    "homeworld": "Zhdant"
+  },
+  {
+    "name": "Vilani",
+    "description": "Ancient human minor race known for their conservative culture and administrative skills.",
+    "modifiers": [
+      {
+        "characteristic": "EDU",
+        "modifier": 1
+      },
+      {
+        "characteristic": "SOC",
+        "modifier": 1
+      },
+      {
+        "characteristic": "STR",
+        "modifier": -1
+      },
+      {
+        "characteristic": "DEX",
+        "modifier": -1
+      }
+    ],
+    "specialRules": [
+      "Administrative Training: +1 DM to Admin and Bureaucracy checks"
+    ],
+    "homeworld": "Vland"
+  },
+  {
+    "name": "Solomani",
+    "description": "Terran-descended humans with a strong sense of genetic purity and nationalism.",
+    "modifiers": [
+      {
+        "characteristic": "SOC",
+        "modifier": 1
+      }
+    ],
+    "specialRules": [
+      "Genetic Purity: +1 DM to resist genetic modifications and diseases"
+    ],
+    "homeworld": "Terra"
+  }
+]

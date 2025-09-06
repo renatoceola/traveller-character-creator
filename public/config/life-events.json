@@ -1,0 +1,355 @@
+{
+  "version": "2.1.0",
+  "metadata": {
+    "title": "Life Events Table",
+    "description": "Mongoose Traveller 2nd Edition Life Events (2D6 table)",
+    "source": "Mongoose Traveller 2nd Edition Core Rulebook",
+    "usage": "Used during character creation, career events, and pre-career events",
+    "lastUpdated": "2024-12-28"
+  },
+  "events": [
+    {
+      "roll": 2,
+      "title": "Sickness or Injury",
+      "description": "You are injured or become sick. Roll on the Injury table (see page 49).",
+      "effect": {
+        "type": "injury_table",
+        "description": "Roll on the Injury table for consequences",
+        "table": "injury"
+      },
+      "narrative": {
+        "setup": "Their body betrayed them at a crucial moment, whether through accident, illness, or misfortune.",
+        "consequence": "This physical setback would test their resilience and potentially alter their capabilities permanently.",
+        "worldBuilding": "In the dangerous galaxy of the 57th century, injury and illness are constant companions to those who live adventurous lives."
+      },
+      "tags": ["injury", "health", "setback", "physical"]
+    },
+    {
+      "roll": 3,
+      "title": "Birth or Death",
+      "description": "Someone close to you dies, like a friend or family member. Alternatively, someone close to you gives birth (or is born!). You are involved in some fashion (father or mother, relative, godparent and so forth).",
+      "effect": {
+        "type": "choice",
+        "description": "Choose between death of loved one or birth of new family member",
+        "options": [
+          {
+            "choice": "death",
+            "effect": "emotional_trauma",
+            "description": "A loved one dies - emotional impact and possible inheritance"
+          },
+          {
+            "choice": "birth", 
+            "effect": "new_dependent",
+            "description": "New family member born - gain dependent or responsibility"
+          }
+        ]
+      },
+      "narrative": {
+        "setup": "The cycle of life touched them deeply, bringing either profound loss or new responsibility.",
+        "consequence": "This pivotal moment would reshape their priorities and emotional landscape forever.",
+        "worldBuilding": "Life and death remain the great constants across all worlds and species in the galaxy."
+      },
+      "tags": ["family", "emotional", "life_cycle", "responsibility"]
+    },
+    {
+      "roll": 4,
+      "title": "Ending of Relationship",
+      "description": "A romantic relationship involving you ends. Badly. Gain a Rival or Enemy.",
+      "effect": {
+        "type": "choice",
+        "description": "Romantic relationship ends badly - gain Rival or Enemy",
+        "options": [
+          {
+            "choice": "rival",
+            "effect": "rival",
+            "description": "Gain a Rival (bitter breakup but not complete hatred)"
+          },
+          {
+            "choice": "enemy",
+            "effect": "enemy", 
+            "description": "Gain an Enemy (relationship ended with betrayal or cruelty)"
+          }
+        ]
+      },
+      "narrative": {
+        "setup": "Love turned to bitterness as a romantic relationship collapsed in spectacular fashion.",
+        "consequence": "The painful ending would leave lasting scars and create a persistent antagonistic relationship.",
+        "worldBuilding": "Matters of the heart remain complicated across all cultures and species, often creating lasting enmities."
+      },
+      "tags": ["romance", "relationships", "conflict", "emotional"]
+    },
+    {
+      "roll": 5,
+      "title": "Improved Relationship",
+      "description": "A romantic relationship involving you deepens, possibly leading to marriage or some other emotional commitment. Gain an Ally.",
+      "effect": {
+        "type": "ally",
+        "description": "Romantic relationship deepens - gain an Ally (romantic partner)",
+        "relationship_type": "romantic_partner"
+      },
+      "narrative": {
+        "setup": "Love blossomed into something deeper and more meaningful, creating a lasting bond.",
+        "consequence": "This commitment would provide emotional support and partnership throughout their adventures.",
+        "worldBuilding": "Deep emotional bonds transcend species and cultural boundaries, creating some of the strongest alliances in the galaxy."
+      },
+      "tags": ["romance", "relationships", "commitment", "positive"]
+    },
+    {
+      "roll": 6,
+      "title": "New Relationship",
+      "description": "You become involved in a romantic relationship. Gain an Ally.",
+      "effect": {
+        "type": "ally",
+        "description": "New romantic relationship begins - gain an Ally",
+        "relationship_type": "romantic_interest"
+      },
+      "narrative": {
+        "setup": "A chance encounter or growing friendship blossomed into romantic feelings.",
+        "consequence": "This new relationship would add complexity and support to their life journey.",
+        "worldBuilding": "Romance finds a way to flourish even in the harsh realities of interstellar life."
+      },
+      "tags": ["romance", "relationships", "new_beginning", "positive"]
+    },
+    {
+      "roll": 7,
+      "title": "New Contact",
+      "description": "You gain a new Contact.",
+      "effect": {
+        "type": "contact",
+        "description": "Gain a new Contact (professional or social connection)"
+      },
+      "narrative": {
+        "setup": "A chance meeting or professional interaction created a valuable new connection.",
+        "consequence": "This contact would prove useful in future endeavors, providing information or opportunities.",
+        "worldBuilding": "In a galaxy of countless worlds and cultures, personal connections often prove more valuable than credits."
+      },
+      "tags": ["networking", "professional", "opportunity", "social"]
+    },
+    {
+      "roll": 8,
+      "title": "Betrayal",
+      "description": "You are betrayed in some fashion by a friend. If you have any Contacts or Allies, convert one into a Rival and Enemy. Otherwise, gain a Rival or Enemy.",
+      "effect": {
+        "type": "betrayal",
+        "description": "Friend betrays you - convert existing Contact/Ally to Rival/Enemy, or gain new Rival/Enemy",
+        "conversion": true
+      },
+      "narrative": {
+        "setup": "Trust was shattered when someone close revealed their true nature through betrayal.",
+        "consequence": "This painful lesson in human nature would make them more cautious about whom to trust.",
+        "worldBuilding": "Betrayal is a universal constant, cutting across all species and cultures with equal cruelty."
+      },
+      "tags": ["betrayal", "trust", "relationships", "conflict"]
+    },
+    {
+      "roll": 9,
+      "title": "Travel",
+      "description": "You move to another world. You gain DM+2 to your next qualification roll.",
+      "effect": {
+        "type": "travel",
+        "description": "Move to another world - gain DM+2 to next qualification roll",
+        "modifier": {
+          "type": "qualification",
+          "value": 2,
+          "duration": "next_roll"
+        }
+      },
+      "narrative": {
+        "setup": "Circumstances led them to pack their belongings and seek opportunities on a distant world.",
+        "consequence": "This change of scenery would broaden their horizons and open new career possibilities.",
+        "worldBuilding": "In an era of routine interstellar travel, changing worlds is often the key to changing one's fortune."
+      },
+      "tags": ["travel", "opportunity", "new_world", "career_boost"]
+    },
+    {
+      "roll": 10,
+      "title": "Good Fortune",
+      "description": "Something good happens to you; you come into money unexpectedly, have a lifelong dream come true, get a book published or have some other stroke of good fortune. Gain DM+2 to any one Benefit roll.",
+      "effect": {
+        "type": "good_fortune",
+        "description": "Stroke of good luck - gain DM+2 to any one Benefit roll",
+        "modifier": {
+          "type": "benefit",
+          "value": 2,
+          "duration": "one_use"
+        }
+      },
+      "narrative": {
+        "setup": "Fortune smiled upon them as unexpected good luck transformed their circumstances.",
+        "consequence": "This windfall would provide opportunities and resources for future endeavors.",
+        "worldBuilding": "Even in the vast indifference of space, sometimes the universe grants unexpected gifts to the deserving."
+      },
+      "tags": ["fortune", "luck", "windfall", "positive"]
+    },
+    {
+      "roll": 11,
+      "title": "Crime",
+      "description": "You are the victim (or are accused) of a crime. Lose one Benefit roll or take the Prisoner career in your next term.",
+      "effect": {
+        "type": "choice",
+        "description": "Victim of crime or accused - lose Benefit roll or take Prisoner career",
+        "options": [
+          {
+            "choice": "lose_benefit",
+            "effect": "lose_benefit_roll",
+            "description": "Lose one Benefit roll (legal fees, stolen property, etc.)"
+          },
+          {
+            "choice": "prisoner",
+            "effect": "career_forced",
+            "career": "Prisoner",
+            "description": "Take Prisoner career next term (wrongly accused or caught)"
+          }
+        ]
+      },
+      "narrative": {
+        "setup": "The long arm of the law reached out to entangle them, whether as victim or accused.",
+        "consequence": "This brush with the criminal justice system would leave lasting marks on their record and psyche.",
+        "worldBuilding": "Crime and punishment follow familiar patterns across the galaxy, though methods and severity vary by world."
+      },
+      "tags": ["crime", "legal", "setback", "prisoner"]
+    },
+    {
+      "roll": 12,
+      "title": "Unusual Event",
+      "description": "Something weird happens. Roll 1D:",
+      "effect": {
+        "type": "unusual_event",
+        "description": "Roll 1D6 for unusual event type",
+        "subtable": {
+          "1": {
+            "title": "Psionics",
+            "description": "You encounter a Psionic Institute. You may immediately test your Psionic Strength and, if you qualify, take the Psion career in your next term. See page 236 for more details."
+          },
+          "2": {
+            "title": "Aliens",
+            "description": "You spend time among an alien species. Gain a Science 1 and a Contact among an alien species."
+          },
+          "3": {
+            "title": "Alien Artefact",
+            "description": "You have a strange and unusual device from an alien culture that is not normally available to humans."
+          },
+          "4": {
+            "title": "Amnesia",
+            "description": "Something happened to you but you do not know what it was."
+          },
+          "5": {
+            "title": "Contact with Government",
+            "description": "You briefly came into contact with the highest echelons of the Imperium – an Archduke or the Emperor, perhaps, or Imperial intelligence."
+          },
+          "6": {
+            "title": "Ancient Technology",
+            "description": "You have something older than the Imperium or even something older than humanity."
+          }
+        }
+      },
+      "narrative": {
+        "setup": "Reality took a strange turn as they encountered something beyond normal experience.",
+        "consequence": "This brush with the extraordinary would expand their understanding of the galaxy's hidden mysteries.",
+        "worldBuilding": "The galaxy holds countless secrets and wonders that occasionally intrude upon ordinary lives in extraordinary ways."
+      },
+      "tags": ["unusual", "mystery", "psionics", "aliens", "ancient"]
+    }
+  ],
+  "injury_table": {
+    "metadata": {
+      "title": "Injury Table",
+      "description": "Physical injuries and their consequences (referenced by Life Events roll 2)",
+      "usage": "Roll 1D6 when Sickness or Injury life event occurs"
+    },
+    "injuries": [
+      {
+        "roll": 1,
+        "title": "Nearly killed",
+        "description": "Reduce one physical characteristic (STR, DEX or END) by 1D6, reduce two other physical characteristics by 2 each.",
+        "effect": {
+          "type": "characteristic_loss",
+          "primary": {
+            "characteristics": ["STR", "DEX", "END"],
+            "reduction": "1d6",
+            "choose": 1
+          },
+          "secondary": {
+            "characteristics": ["STR", "DEX", "END"],
+            "reduction": 2,
+            "choose": 2,
+            "exclude_primary": true
+          }
+        }
+      },
+      {
+        "roll": 2,
+        "title": "Severely injured",
+        "description": "Reduce one physical characteristic (STR, DEX or END) by 1D6.",
+        "effect": {
+          "type": "characteristic_loss",
+          "primary": {
+            "characteristics": ["STR", "DEX", "END"],
+            "reduction": "1d6",
+            "choose": 1
+          }
+        }
+      },
+      {
+        "roll": 3,
+        "title": "Missing eye or limb",
+        "description": "Reduce STR or DEX by 2.",
+        "effect": {
+          "type": "characteristic_loss",
+          "primary": {
+            "characteristics": ["STR", "DEX"],
+            "reduction": 2,
+            "choose": 1
+          }
+        }
+      },
+      {
+        "roll": 4,
+        "title": "Scarred",
+        "description": "You are scarred and injured. No permanent effect.",
+        "effect": {
+          "type": "cosmetic",
+          "description": "Permanent scarring but no mechanical effect"
+        }
+      },
+      {
+        "roll": 5,
+        "title": "Injured",
+        "description": "Reduce STR, DEX or END by 1.",
+        "effect": {
+          "type": "characteristic_loss",
+          "primary": {
+            "characteristics": ["STR", "DEX", "END"],
+            "reduction": 1,
+            "choose": 1
+          }
+        }
+      },
+      {
+        "roll": 6,
+        "title": "Lightly injured",
+        "description": "No permanent effect.",
+        "effect": {
+          "type": "none",
+          "description": "No lasting consequences"
+        }
+      }
+    ]
+  },
+  "narrative_themes": {
+    "personal_growth": "Life events that shape character development and emotional maturity",
+    "relationships": "The complex web of human connections that define our social existence",
+    "fortune": "The random nature of luck and misfortune that affects all lives",
+    "mystery": "Encounters with the strange and unexplained aspects of the galaxy"
+  },
+  "integration_notes": {
+    "pre_career": "Called by pre-career event roll 7 - 'Life Event'",
+    "career_events": "Many career event tables reference life events",
+    "aging": "Some aging effects may trigger life events",
+    "frequency": "Can occur multiple times during character creation"
+  }
+}
+
+
+
+

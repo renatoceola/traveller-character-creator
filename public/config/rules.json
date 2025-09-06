@@ -1,0 +1,79 @@
+{
+  "characterCreation": {
+    "allowCharacteristicRerolls": true,
+    "maxRerollsPerCharacteristic": 1,
+    "enforceMinimumCharacteristics": true,
+    "minCharacteristicSum": 45,
+    "minimumValue": 1,
+    "maximumValue": 15,
+    "dmTable": {
+      "0": -3,
+      "1-2": -2,
+      "3-5": -1,
+      "6-8": 0,
+      "9-11": 1,
+      "12-14": 2,
+      "15+": 3
+    },
+    "generation": {
+      "method": "2d6",
+      "alternativeMethod": "3d6_drop_lowest",
+      "rolls": 6,
+      "assignment": "free",
+      "minimumValue": 1,
+      "maximumValue": 15,
+      "rerollsAllowed": 1,
+      "rerollCondition": "total_less_than_45"
+    }
+  },
+  "skills": {
+    "allowSkillAdvancement": true,
+    "maxSkillLevel": 4,
+    "cascadeSkillRules": {
+      "Pilot": ["Spacecraft", "Small Craft", "Capital Ships"],
+      "Gun Combat": ["Slug Pistol", "Slug Rifle", "Shotgun", "Laser Carbine", "Laser Rifle"],
+      "Heavy Weapons": ["Portable Plasma", "FGMP", "PGMP", "Rocket Launcher"],
+      "Vehicle": ["Grav", "Tracked", "Wheeled", "Walker"]
+    }
+  },
+  "aging": {
+    "enableAging": true,
+    "agingStartTerm": 4,
+    "agingModifiers": {
+      "4": {
+        "STR": -1,
+        "DEX": -1,
+        "END": -1
+      },
+      "5": {
+        "STR": -1,
+        "DEX": -1,
+        "END": -1,
+        "INT": -1
+      },
+      "6": {
+        "STR": -2,
+        "DEX": -2,
+        "END": -2,
+        "INT": -1
+      },
+      "7": {
+        "STR": -2,
+        "DEX": -2,
+        "END": -2,
+        "INT": -1,
+        "EDU": -1
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "core-rules",
+      "description": "Core Traveller rules implementation",
+      "enabled": true,
+      "parameters": {
+        "version": "2022"
+      }
+    }
+  ]
+}
