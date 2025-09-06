@@ -146,23 +146,22 @@ export class ConfigLoader {
    */
   private async loadJsonFile(filename: string): Promise<unknown> {
     try {
-      // In a real implementation, this would load from the file system
-      // For now, we'll use dynamic imports or fetch
-      const response = await fetch(`/config/${filename}`);
+      // Try to load from public/config first (correct path for GitHub Pages)
+      const response = await fetch(`/public/config/${filename}`);
       if (!response.ok) {
         throw new Error(`Failed to load ${filename}: ${response.statusText}`);
       }
       return await response.json();
     } catch {
-      // Fallback: try to load from public folder
+      // Fallback: try to load from config directory
       try {
-        const response = await fetch(`/public/config/${filename}`);
+        const response = await fetch(`/config/${filename}`);
         if (!response.ok) {
-          throw new Error(`Failed to load ${filename} from public folder: ${response.statusText}`);
+          throw new Error(`Failed to load ${filename} from config folder: ${response.statusText}`);
         }
         return await response.json();
       } catch {
-        throw new Error(`Failed to load ${filename} from both /config and /public/config directories`);
+        throw new Error(`Failed to load ${filename} from both /public/config and /config directories`);
       }
     }
   }
