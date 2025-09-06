@@ -145,23 +145,26 @@ export class ConfigLoader {
    * Load a JSON file from the config directory
    */
   private async loadJsonFile(filename: string): Promise<unknown> {
+    // Get the base path from the current location
+    const basePath = import.meta.env.BASE_URL || '/';
+    
     try {
       // Try to load from public/config first (correct path for GitHub Pages)
-      const response = await fetch(`/public/config/${filename}`);
+      const response = await fetch(`${basePath}config/${filename}`);
       if (!response.ok) {
         throw new Error(`Failed to load ${filename}: ${response.statusText}`);
       }
       return await response.json();
     } catch {
-      // Fallback: try to load from config directory
+      // Fallback: try to load from public/config with explicit path
       try {
-        const response = await fetch(`/config/${filename}`);
+        const response = await fetch(`${basePath}public/config/${filename}`);
         if (!response.ok) {
-          throw new Error(`Failed to load ${filename} from config folder: ${response.statusText}`);
+          throw new Error(`Failed to load ${filename} from public/config: ${response.statusText}`);
         }
         return await response.json();
       } catch {
-        throw new Error(`Failed to load ${filename} from both /public/config and /config directories`);
+        throw new Error(`Failed to load ${filename} from both ${basePath}config and ${basePath}public/config directories`);
       }
     }
   }

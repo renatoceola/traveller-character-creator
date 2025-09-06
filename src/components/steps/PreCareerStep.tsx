@@ -41,7 +41,8 @@ export const PreCareerStep: React.FC<PreCareerStepProps> = ({
     const loadEvents = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch('/config/pre-career-events.json');
+        const basePath = import.meta.env.BASE_URL || '/';
+        const response = await fetch(`${basePath}config/pre-career-events.json`);
         if (!response.ok) {
           throw new Error(`Failed to load pre-career events: ${response.statusText}`);
         }

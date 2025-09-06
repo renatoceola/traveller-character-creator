@@ -51,7 +51,8 @@ export const LifeEventsResolver: React.FC<LifeEventsResolverProps> = ({
     const loadLifeEvents = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch('/config/life-events.json');
+        const basePath = import.meta.env.BASE_URL || '/';
+        const response = await fetch(`${basePath}config/life-events.json`);
         if (!response.ok) {
           throw new Error(`Failed to load life events: ${response.statusText}`);
         }
