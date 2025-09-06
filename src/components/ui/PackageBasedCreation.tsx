@@ -559,7 +559,7 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
       id: 'scout',
       name: 'Scout',
       description: 'The Traveller served aboard an exploration or survey starship, gaining a broad selection of shipboard and problem-solving skills.',
-      skills: ['Astrogation-1', 'Pilot (starship)-1', 'Electronics (computers)-1', 'Engineer (any)-1', 'Jack-of-all-Trades-1', 'Streetwise-1', 'Vacc Suit-1', 'Carouse-0', 'Drive-0', 'Gun Combat-0', 'Medic-0', 'Investigate-0', 'Recon-0'],
+      skills: ['Astrogation-1', 'Pilot (Small Craft)-1', 'Electronics (computers)-1', 'Engineer (any)-1', 'Jack-of-all-Trades-1', 'Streetwise-1', 'Vacc Suit-1', 'Carouse-0', 'Drive-0', 'Gun Combat-0', 'Medic-0', 'Investigate-0', 'Recon-0'],
       benefits: ['Cr25000', '3 Contacts (spacers or contacts on distant worlds)'],
       
       credits: 25000,
@@ -589,7 +589,7 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
       id: 'spacer_command',
       name: 'Spacer (Command)',
       description: 'The Traveller was an officer aboard a naval or commercial starship, serving as part of the bridge or flight crew.',
-      skills: ['Pilot (starship)-2', 'Admin-1', 'Astrogation-1', 'Electronics (sensors)-1', 'Gunner-1', 'Vacc Suit-1', 'Advocate-0', 'Broker-0', 'Leadership-0', 'Persuade-0', 'Tactics-0'],
+      skills: ['Pilot (Spacecraft)-2', 'Admin-1', 'Astrogation-1', 'Electronics (sensors)-1', 'Gunner-1', 'Vacc Suit-1', 'Advocate-0', 'Broker-0', 'Leadership-0', 'Persuade-0', 'Tactics-0'],
       benefits: ['Rank 2 (lieutenant or 4th officer)', 'Cr75000', '1 Ally (former colleague or government official)'],
       
       credits: 75000,
@@ -1016,7 +1016,6 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
       // Base skills
       "Admin": { id: "uF7GLv55spK90zPk", name: "Admin", groupLabel: "Admin", description: "Covers bureaucracies, paperwork and navigating official procedures; tracking inventories and records.", shortdescr: "Covers bureaucracies, paperwork and navigating official procedures; tracking inventories and records." },
       "Advocate": { id: "dcxU5p2QXCYPlLAN", name: "Advocate", groupLabel: "Advocate", description: "Knowledge of legal codes and practice (esp. interstellar law), debate and oratory.", shortdescr: "Knowledge of legal codes and practice (esp. interstellar law), debate and oratory." },
-      "Art": { id: "FlDqhGziefjECgfH", name: "Art", groupLabel: "Art", description: "Training in creative arts; performance, composition and production across various media.", shortdescr: "Training in creative arts; performance, composition and production across various media." },
       "Diplomat": { id: "lDhnyouJcz3msKja", name: "Diplomat", groupLabel: "Diplomat", description: "Negotiation, protocol and formal communication between groups.", shortdescr: "Negotiation, protocol and formal communication between groups." },
       "Investigate": { id: "kDs4BfPSWSPtYi0k", name: "Investigate", groupLabel: "Investigate", description: "Observation, forensics and detailed analysis to find clues and patterns.", shortdescr: "Observation, forensics and detailed analysis to find clues and patterns." },
       "Mechanic": { id: "HOGKob6Rq0F63uJ9", name: "Mechanic", groupLabel: "Mechanic", description: "Repairing and maintaining machines, vehicles and equipment.", shortdescr: "Repairing and maintaining machines, vehicles and equipment." },
@@ -1107,13 +1106,33 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
       "Gun Combat (Archaic)": { id: "ABRk5Aep41vuSTJU", name: "Gun Combat (Archaic)", groupLabel: "Gun Combat", description: "Personal-scale ranged firearms (archaic, slug, energy). Specialization: Bows, crossbows and other non‑thrown archaic ranged weapons.", shortdescr: "Personal-scale ranged firearms (archaic, slug, energy)." },
       "Gun Combat (Energy)": { id: "PnSIDW0zEhrsXoIn", name: "Gun Combat (Energy)", groupLabel: "Gun Combat", description: "Personal-scale ranged firearms (archaic, slug, energy). Specialization: Lasers, plasma and energy small arms.", shortdescr: "Personal-scale ranged firearms (archaic, slug, energy)." },
       "Gun Combat (Slug)": { id: "HeLVjl7LbYwW0NCd", name: "Gun Combat (Slug)", groupLabel: "Gun Combat", description: "Personal-scale ranged firearms (archaic, slug, energy). Specialization: Slug throwers (autorifles, gauss, etc.).", shortdescr: "Personal-scale ranged firearms (archaic, slug, energy)." },
-      "Gun Combat": { id: "ABRk5Aep41vuSTJU", name: "Gun Combat", groupLabel: "Gun Combat", description: "Personal-scale ranged firearms (archaic, slug, energy).", shortdescr: "Personal-scale ranged firearms (archaic, slug, energy)." },
       
       // Melee specializations
       "Melee (Blade)": { id: "0bmCGDZwiWo1IF9P", name: "Melee (Blade)", groupLabel: "Melee", description: "Close combat with natural weapons, blades and bludgeons, including unarmed. Specialization: Swords, knives and edged weapons.", shortdescr: "Close combat with natural weapons, blades and bludgeons, including unarmed." },
       "Melee (Bludgeon)": { id: "BiRUI0g4VITMTZrO", name: "Melee (Bludgeon)", groupLabel: "Melee", description: "Close combat with natural weapons, blades and bludgeons, including unarmed. Specialization: Clubs, staves and blunt weapons.", shortdescr: "Close combat with natural weapons, blades and bludgeons, including unarmed." },
       "Melee (Natural)": { id: "ugX6eNvJSCFWmeDw", name: "Melee (Natural)", groupLabel: "Melee", description: "Close combat with natural weapons, blades and bludgeons, including unarmed. Specialization: Claws, teeth or other natural weapons.", shortdescr: "Close combat with natural weapons, blades and bludgeons, including unarmed." },
-      "Melee (Unarmed)": { id: "yeZkGVbziff4PA8e", name: "Melee (Unarmed)", groupLabel: "Melee", description: "Close combat with natural weapons, blades and bludgeons, including unarmed. Specialization: Punches, grapples and natural body strikes.", shortdescr: "Close combat with natural weapons, blades and bludgeons, including unarmed." }
+      "Melee (Unarmed)": { id: "yeZkGVbziff4PA8e", name: "Melee (Unarmed)", groupLabel: "Melee", description: "Close combat with natural weapons, blades and bludgeons, including unarmed. Specialization: Punches, grapples and natural body strikes.", shortdescr: "Close combat with natural weapons, blades and bludgeons, including unarmed." },
+
+      // Tactics specializations
+      "Tactics (Military)": { id: "fSgkMqXQFY93ga2Y", name: "Tactics (Military)", groupLabel: "Tactics", description: "Planning and executing military/naval operations. Specialization: Land/air combined arms planning.", shortdescr: "Planning and executing military/naval operations." },
+      "Tactics (Naval)": { id: "rCDjveYCmfow6a1P", name: "Tactics (Naval)", groupLabel: "Tactics", description: "Planning and executing military/naval operations. Specialization: Fleet and space/naval operations planning.", shortdescr: "Planning and executing military/naval operations." },
+
+      // Animals specializations
+      "Animals (Handling)": { id: "YeAApQ6H3s83LlIV", name: "Animals (Handling)", groupLabel: "Animals", description: "Care, handling and training of animals; includes veterinary medicine. Specialization: General animal care and handling.", shortdescr: "Care, handling and training of animals; includes veterinary medicine." },
+      "Animals (Training)": { id: "2afYMNXmyyePyuOH", name: "Animals (Training)", groupLabel: "Animals", description: "Care, handling and training of animals; includes veterinary medicine. Specialization: Training animals for specific tasks.", shortdescr: "Care, handling and training of animals; includes veterinary medicine." },
+      "Animals (Veterinary)": { id: "UNbij2hsgUtWCmmJ", name: "Animals (Veterinary)", groupLabel: "Animals", description: "Care, handling and training of animals; includes veterinary medicine. Specialization: Veterinary medicine and animal care; use Medic rules with Animals (veterinary).", shortdescr: "Care, handling and training of animals; includes veterinary medicine." },
+
+      // Art specializations
+      "Art (Holography)": { id: "FlDqhGziefjECgfH", name: "Art (Holography)", groupLabel: "Art", description: "Training in creative arts; performance, composition and production across various media. Specialization: Recording and producing clear, aesthetic holograms covertly or openly.", shortdescr: "Training in creative arts; performance, composition and production across various media." },
+      "Art (Instrument)": { id: "5ci0ETtSdaCy01up", name: "Art (Instrument)", groupLabel: "Art", description: "Training in creative arts; performance, composition and production across various media. Specialization: Playing specific musical instruments with skill.", shortdescr: "Training in creative arts; performance, composition and production across various media." },
+      "Art (Performer)": { id: "jTQdYNtuSdfrutMW", name: "Art (Performer)", groupLabel: "Art", description: "Training in creative arts; performance, composition and production across various media. Specialization: Acting, dance and singing for stage, screen or holo.", shortdescr: "Training in creative arts; performance, composition and production across various media." },
+      "Art (Visual Media)": { id: "LcnhrDRmyNB5nTyY", name: "Art (Visual Media)", groupLabel: "Art", description: "Training in creative arts; performance, composition and production across various media. Specialization: Painting, sculpture and other visual arts.", shortdescr: "Training in creative arts; performance, composition and production across various media." },
+      "Art (Write)": { id: "9c05tj596Qh4coao", name: "Art (Write)", groupLabel: "Art", description: "Training in creative arts; performance, composition and production across various media. Specialization: Writing inspiring or persuasive text and literature.", shortdescr: "Training in creative arts; performance, composition and production across various media." },
+
+      // Heavy Weapons specializations
+      "Heavy Weapons (Artillery)": { id: "OX0nxSztegLfz9dB", name: "Heavy Weapons (Artillery)", groupLabel: "Heavy Weapons", description: "Portable and mounted destructive weapons; artillery and vehicle guns. Specialization: Indirect‑fire guns, mortars, howitzers.", shortdescr: "Portable and mounted destructive weapons; artillery and vehicle guns." },
+      "Heavy Weapons (Portable)": { id: "2d9kTFEEPLYH9S6w", name: "Heavy Weapons (Portable)", groupLabel: "Heavy Weapons", description: "Portable and mounted destructive weapons; artillery and vehicle guns. Specialization: Portable missile, fusion and plasma weapons.", shortdescr: "Portable and mounted destructive weapons; artillery and vehicle guns." },
+      "Heavy Weapons (Vehicle)": { id: "NL4YjqTxemAf2IHY", name: "Heavy Weapons (Vehicle)", groupLabel: "Heavy Weapons", description: "Portable and mounted destructive weapons; artillery and vehicle guns. Specialization: Tank guns, autocannon and vehicle mounts.", shortdescr: "Portable and mounted destructive weapons; artillery and vehicle guns." },
       };
       
       console.log('Using fallback skill catalog with', Object.keys(catalog).length, 'skills');
