@@ -7,6 +7,7 @@
 import React, { useEffect, useState } from 'react';
 import type { Character, Rules, CharacteristicSet, Skill } from '@/types';
 import { CharacterHistoryManager } from '@/utils/characterHistory';
+import { CharacteristicCalculator } from '@/utils/characteristicCalculator';
 import { roll } from '@/utils/dice';
 
 interface BackgroundPackage {
@@ -73,6 +74,7 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
   const [events, setEvents] = useState<any[]>([]);
   const [finalizingStep, setFinalizingStep] = useState<'review' | 'career_option' | 'skill_improvement' | 'benefits' | 'complete'>('review');
   const [skillImprovements, setSkillImprovements] = useState<{[key: string]: number}>({});
+  
   const resetImprovementsRef = React.useRef<boolean>(false);
   const [selectedSkillImprovement, setSelectedSkillImprovement] = useState<number | null>(null);
   const [selectedCareerOption, setSelectedCareerOption] = useState<number | null>(null);
@@ -96,6 +98,20 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
       setSelectedSkillImprovement(null);
     }
   }, [finalizingStep, selectedCareerOption]);
+
+  // Reset state when going back to previous steps
+  useEffect(() => {
+    if (finalizingStep === 'career_option') {
+      console.log('Resetting skill improvements due to finalizingStep change to career_option');
+      // Reset skill improvements and benefits when going back to career option
+      setSkillImprovements({});
+      setSelectedSkillImprovement(null);
+      setSelectedBenefit(null);
+      setCharacteristicBonuses({});
+      setSelectedOptionOneSkill(null);
+      setSelectedOptionTwoSkills([]);
+    }
+  }, [finalizingStep]);
   const [characterRank, setCharacterRank] = useState<string>('Rank 0');
   const [characteristicBonuses, setCharacteristicBonuses] = useState<{[key: string]: number}>({});
 
@@ -393,7 +409,7 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
       id: 'citizen',
       name: 'Citizen',
       description: 'The Traveller has lived a comfortable life in a mid to high technology society, with few opportunities for adventure or excitement.',
-      skills: ['Profession (any)-2', 'Admin-1', 'Drive (any)-1', 'Electronics (computer)-1', 'Flyer (any)-1', 'Science (any)-1', 'Streetwise-1', 'Advocate-0', 'Art-0', 'Carouse-0', 'Deception-0', 'Diplomat-0', 'Mechanic-0', 'Medic-0', 'Persuade-0'],
+      skills: ['Profession (any)-2', 'Admin-1', 'Drive (any)-1', 'Electronics (computers)-1', 'Flyer (any)-1', 'Science (any)-1', 'Streetwise-1', 'Advocate-0', 'Art-0', 'Carouse-0', 'Deception-0', 'Diplomat-0', 'Mechanic-0', 'Medic-0', 'Persuade-0'],
       benefits: ['Cr30000', '2 Contacts (former friends or business associates)'],
       
       credits: 30000,
@@ -438,7 +454,7 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
       id: 'medic',
       name: 'Medic',
       description: 'Most medical professionals settle down to a sedentary and well-paid life, but some instead choose to travel. Their reasons vary from altruism or a desire to see the universe, to a need to stay one step ahead of a malpractice suit.',
-      skills: ['Medic-3', 'Admin-2', 'Electronics (computer)-1', 'Investigate-1', 'Profession-1', 'Science (any)-1', 'Advocate-0', 'Diplomat-0', 'Drive-0', 'Flyer-0'],
+      skills: ['Medic-3', 'Admin-2', 'Electronics (computers)-1', 'Investigate-1', 'Profession-1', 'Science (any)-1', 'Advocate-0', 'Diplomat-0', 'Drive-0', 'Flyer-0'],
       benefits: ['Cr50000', '2 Contacts (in the medical field or patients)'],
       
       credits: 50000,
@@ -623,6 +639,7 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
     setEvents(prev => [...prev, ageEvent]);
   };
 
+
   // Removed roller entirely; references have been eliminated from the UI.
 
 
@@ -662,7 +679,15 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
   };
 
   // Build Foundry VTT (twodsix) JSON from the finalized character
-  type FvttSkillMeta = { id?: string; name?: string; groupLabel?: string; description?: string; shortdescr?: string };
+  type FvttSkillMeta = { 
+    id?: string; 
+    name?: string; 
+    groupLabel?: string; 
+    description?: string; 
+    shortdescr?: string;
+    docReference?: string[];
+    pdfReference?: { type: string; href: string; label: string };
+  };
   const buildFoundryExport = (catalog?: Record<string, FvttSkillMeta>, baseExample?: any) => {
     if (!selectedBackgroundPackage || !selectedCareerPackage) return null;
 
@@ -681,56 +706,118 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
 
     // Build skills with final levels (>=0 only)
     const finalSkills = (() => {
-      const combined = combineSkills(selectedBackgroundPackage.skills, selectedCareerPackage.skills)
-        .map(s => ({
-          name: s.name,
-          level: Math.min(4, s.level + (skillImprovements[s.name] || 0)),
-        }));
+      console.log('Background skills:', selectedBackgroundPackage.skills);
+      console.log('Career skills:', selectedCareerPackage.skills);
+      
+      // Process packages directly to get final skills
+      const combined = combineSkills(selectedBackgroundPackage.skills, selectedCareerPackage.skills);
+      console.log('Combined skills from combineSkills:', combined);
+      
+      const withImprovements = combined.map(s => ({
+        name: s.name,
+        level: Math.min(4, s.level + (skillImprovements[s.name] || 0)),
+      }));
+      console.log('Skills with improvements:', withImprovements);
 
       // Add improvement-only skills not originally present
-      const set = new Set(combined.map(s => s.name));
+      const set = new Set(withImprovements.map(s => s.name));
       Object.entries(skillImprovements).forEach(([name, inc]) => {
         if (!set.has(name)) {
-          combined.push({ name, level: Math.min(4, inc) });
+          withImprovements.push({ name, level: Math.min(4, inc) });
         }
       });
 
-      return combined
-        .filter(s => s.level >= 0)
+      const filtered = withImprovements
+        .filter(s => s.level >= 0) // Include all skills with level >= 0
         .sort((a, b) => a.name.localeCompare(b.name));
+        
+      console.log('Final filtered skills:', filtered);
+      return filtered;
     })();
 
+    console.log('Processing skills for export:', finalSkills.map(s => s.name)); // Debug: show skills being processed
+    console.log('Final skills count:', finalSkills.length); // Debug: show final skills count
+    
     const skillItems = finalSkills.map((s, idx) => {
-      const meta = catalog?.[s.name];
+      // First try to find the exact skill name (with specialization)
+      let meta = catalog?.[s.name];
+      let skillName = s.name;
+      
+      // If not found, try the base skill name (without specialization)
+      if (!meta) {
+        const baseSkillName = s.name.split(' (')[0];
+        meta = catalog?.[baseSkillName];
+        
+        // If still not found and this is a skill that needs specialization (level 0),
+        // try to find the first available specialization
+        if (!meta && s.level === 0) {
+          // Try to find any specialization for this base skill in the catalog
+          const possibleSpecializations = Object.keys(catalog || {}).filter(key => 
+            key.startsWith(baseSkillName + ' (') && key.endsWith(')')
+          );
+          
+          if (possibleSpecializations.length > 0) {
+            // Use the first available specialization
+            const firstSpec = possibleSpecializations[0];
+            meta = catalog![firstSpec];
+            skillName = firstSpec;
+          }
+        }
+      }
+      
+      console.log(`Looking up skill "${s.name}" -> final: "${skillName}" -> meta:`, meta);
+      
+      // If we don't have the exact ID from catalog, we should not create the skill
+      // as it won't match the expected Foundry VTT format
+      if (!meta?.id) {
+        console.warn(`Skill "${s.name}" not found in catalog, skipping export`);
+        console.log('Available catalog keys:', Object.keys(catalog || {}).slice(0, 20));
+        return null;
+      }
+      
+      console.log(`Found skill "${s.name}" with ID: ${meta.id}`); // Debug: show successful matches
+      
       return ({
-      type: 'skills',
-      name: meta?.name || s.name,
-      system: {
-        value: s.level,
-        characteristic: 'NONE',
         type: 'skills',
-        description: meta?.description || '',
-        shortdescr: meta?.shortdescr || '',
-        subtype: '',
-        key: 'key',
-        difficulty: 'Average',
-        rolltype: 'Normal',
-        trainingNotes: '',
-        groupLabel: meta?.groupLabel || s.name.split(' (')[0],
-        name: meta?.name || s.name,
-        priorType: 'unknown',
-        prereq: ''
-      },
-      flags: {},
-      img: 'icons/svg/mystery-man.svg',
-      effects: [],
-      folder: null,
-      sort: (idx + 1) * 100000,
-      ownership: { default: 0 },
-      _stats: {},
-      _id: meta?.id || undefined
-    });
-    });
+        name: skillName, // Use the specialized name for display (or original if no specialization needed)
+        _id: meta.id, // Use exact ID from sample file
+        system: {
+          value: s.level,
+          characteristic: 'NONE',
+          type: 'skills',
+          description: meta?.description || '',
+          shortdescr: meta?.shortdescr || '',
+          subtype: '',
+          key: 'key',
+          difficulty: 'Average',
+          rolltype: 'Normal',
+          trainingNotes: '',
+          groupLabel: meta?.groupLabel || skillName.split(' (')[0],
+          name: meta?.name || skillName.split(' (')[0],
+          priorType: 'unknown',
+          prereq: '',
+          docReference: meta?.docReference || [""],
+          pdfReference: meta?.pdfReference || { type: "", href: "", label: "" }
+        },
+        flags: {},
+        img: 'icons/svg/mystery-man.svg',
+        effects: [],
+        folder: null,
+        sort: (idx + 1) * 100000,
+        ownership: { default: 0 },
+        _stats: {
+          coreVersion: "13.348",
+          systemId: "twodsix",
+          systemVersion: "6.6.0",
+          createdTime: Date.now(),
+          modifiedTime: Date.now(),
+          lastModifiedBy: null
+        }
+      });
+    }).filter(Boolean) as any[]; // Remove null values and cast to non-null array
+    
+    console.log('Skill items count:', skillItems.length); // Debug: show skill items count
+    console.log('Skill items:', skillItems.map(s => ({ name: s.name, id: s._id }))); // Debug: show skill items
 
     // Start from example template if provided; else minimal baseline
     const exportObj: any = baseExample ? JSON.parse(JSON.stringify(baseExample)) : {
@@ -743,17 +830,52 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
     };
 
     // Overwrite dynamic fields in system
-    exportObj.name = character?.name || exportObj.name || 'Traveller';
+    exportObj.name = exportObj.name || 'Traveller';
     exportObj.system = exportObj.system || {};
-    exportObj.system.name = character?.name || exportObj.system.name || '';
+    exportObj.system.name = exportObj.system.name || 'Traveller';
+    
+    // Ensure all required characteristics are present
     exportObj.system.characteristics = {
       strength: { key: 'strength', value: charMap.strength, damage: 0, label: 'Strength', shortLabel: 'STR', displayShortLabel: '' },
       dexterity: { key: 'dexterity', value: charMap.dexterity, damage: 0, label: 'Dexterity', shortLabel: 'DEX', displayShortLabel: '' },
       endurance: { key: 'endurance', value: charMap.endurance, damage: 0, label: 'Endurance', shortLabel: 'END', displayShortLabel: '' },
       intelligence: { key: 'intelligence', value: charMap.intelligence, damage: 0, label: 'Intelligence', shortLabel: 'INT', displayShortLabel: '' },
       education: { key: 'education', value: charMap.education, damage: 0, label: 'Education', shortLabel: 'EDU', displayShortLabel: '' },
-      socialStanding: { key: 'socialStanding', value: charMap.socialStanding, damage: 0, label: 'SocialStanding', shortLabel: 'SOC', displayShortLabel: '' }
+      socialStanding: { key: 'socialStanding', value: charMap.socialStanding, damage: 0, label: 'SocialStanding', shortLabel: 'SOC', displayShortLabel: '' },
+      psionicStrength: { key: 'psionicStrength', value: 0, damage: 0, label: 'PsionicStrength', shortLabel: 'PSI', displayShortLabel: '' },
+      stamina: { key: 'stamina', value: 0, damage: 0, label: 'Stamina', shortLabel: 'STA', displayShortLabel: '' },
+      lifeblood: { key: 'lifeblood', value: 0, damage: 0, label: 'Lifeblood', shortLabel: 'LFB', displayShortLabel: '' },
+      alternative1: { key: 'alternative1', value: 0, damage: 0, label: 'Alternative1', shortLabel: 'ALT1', displayShortLabel: '' },
+      alternative2: { key: 'alternative2', value: 0, damage: 0, label: 'Alternative2', shortLabel: 'ALT2', displayShortLabel: '' },
+      alternative3: { key: 'alternative3', value: 0, damage: 0, label: 'Alternative3', shortLabel: 'ALT3', displayShortLabel: '' }
     };
+    
+    // Ensure all required system fields are present
+    exportObj.system.characteristicEdit = exportObj.system.characteristicEdit || false;
+    exportObj.system.primaryArmor = exportObj.system.primaryArmor || { value: 0 };
+    exportObj.system.radiationProtection = exportObj.system.radiationProtection || { value: 0 };
+    exportObj.system.armorType = exportObj.system.armorType || "nothing";
+    exportObj.system.armorDM = exportObj.system.armorDM || 0;
+    exportObj.system.conditions = exportObj.system.conditions || { woundedEffect: 0, encumberedEffect: 0 };
+    exportObj.system.movement = exportObj.system.movement || { burrow: null, climb: null, fly: null, swim: null, walk: 10, units: "m", hover: false };
+    exportObj.system.docReference = exportObj.system.docReference || [""];
+    exportObj.system.pdfReference = exportObj.system.pdfReference || { type: "", href: "", label: "" };
+    exportObj.system.radiationDose = exportObj.system.radiationDose || { value: 0, max: 0, min: 0, label: "" };
+    exportObj.system.encumbrance = exportObj.system.encumbrance || { value: 0, max: 0, min: 0 };
+    exportObj.system.hits = exportObj.system.hits || { value: 21, max: 21, min: 0, lastDelta: 0 };
+    exportObj.system.untrainedSkill = exportObj.system.untrainedSkill || "Vi4sM4clOaXHBSTq";
+    exportObj.system.notes = exportObj.system.notes || "";
+    exportObj.system.bio = exportObj.system.bio || "";
+    exportObj.system.nationality = exportObj.system.nationality || "";
+    exportObj.system.gender = exportObj.system.gender || "";
+    exportObj.system.heroPoints = exportObj.system.heroPoints || 2;
+    exportObj.system.contacts = exportObj.system.contacts || "";
+    exportObj.system.secondaryArmor = exportObj.system.secondaryArmor || { value: 0 };
+    exportObj.system.hideStoredItems = exportObj.system.hideStoredItems || { weapon: false, armor: false, augment: false, equipment: false, consumable: false, attachment: false, junk: false };
+    exportObj.system.experience = exportObj.system.experience || { value: 0, totalEarned: 0 };
+    exportObj.system.xpNotes = exportObj.system.xpNotes || "";
+    exportObj.system.displaySkillGroup = exportObj.system.displaySkillGroup || {};
+    
     exportObj.system.age = { value: characterAge || 0, min: 0 };
     exportObj.system.finances = { cash: String(getTotalCredits()), pension: '0', payments: '0', debt: '0', livingCosts: '0', 'financial-notes': '' };
     exportObj.system.financeValues = { cash: getTotalCredits(), pension: 0, payment: 0, debt: 0, livingCosts: 0 };
@@ -819,7 +941,7 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
     // Build items: keep only Untrained from template, then append our skills
     const baseItems: any[] = Array.isArray(exportObj.items) ? exportObj.items : [];
     const untrained = baseItems.find(it => it?.flags?.twodsix?.untrainedSkill) || {
-      name: 'Untrained', type: 'skills', _id: 'untrained',
+      name: 'Untrained', type: 'skills', _id: 'Vi4sM4clOaXHBSTq', // Use exact ID from sample file
       system: { characteristic: 'NONE', name: '', description: '', type: '', priorType: 'unknown', value: -3, shortdescr: '', subtype: '', prereq: '', key: 'key', difficulty: 'Average', rolltype: 'Normal', trainingNotes: '', groupLabel: '' },
       flags: { twodsix: { untrainedSkill: true } }, img: './systems/twodsix/assets/icons/jack-of-all-trades.svg', effects: [], folder: null, sort: 0, _stats: {}, ownership: { default: 0 }
     };
@@ -831,34 +953,178 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
   const exportToFoundry = async () => {
     let catalog: Record<string, FvttSkillMeta> | undefined = undefined;
     let baseExample: any | undefined = undefined;
+    
     try {
-      // Try to load the canonical example from the public root if present
-      const resp = await fetch('/fvtt-Example.json');
-      if (resp.ok) {
-        const data = await resp.json();
-        baseExample = data;
-        const items: any[] = Array.isArray(data?.items) ? data.items : [];
-        catalog = {};
-        items.filter(it => it?.type === 'skills').forEach(it => {
-          const name: string = it?.name;
-          if (!name) return;
-          catalog![name] = {
-            id: it?._id,
-            name: it?.name,
-            groupLabel: it?.system?.groupLabel,
-            description: it?.system?.description,
-            shortdescr: it?.system?.shortdescr
-          };
-        });
+      // Try to load the actual JSON file
+      const response = await fetch('/fvtt-example-all-skills.json');
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Successfully loaded fvtt-example-all-skills.json');
+        
+        // Extract skills from the loaded data
+        if (data && data.items) {
+          catalog = {};
+          data.items.forEach((item: any) => {
+            if (item.type === 'skills' && item.name && item._id) {
+              catalog![item.name] = {
+                id: item._id,
+                name: item.name,
+                groupLabel: item.system?.groupLabel || '',
+                description: item.system?.description || '',
+                shortdescr: item.system?.shortdescr || '',
+                docReference: item.system?.docReference || [""],
+                pdfReference: item.system?.pdfReference || { type: "", href: "", label: "" }
+              };
+            }
+          });
+          console.log(`Loaded ${Object.keys(catalog).length} skills from JSON file`);
+        }
+        
+        // Use the first item as base example
+        if (data && data.items && data.items.length > 0) {
+          baseExample = data.items[0];
+        }
       }
-    } catch {}
+    } catch (error) {
+      console.warn('Failed to load fvtt-example-all-skills.json, using fallback:', error);
+    }
+    
+    // Fallback if loading failed
+    if (!catalog) {
+      console.log('Using fallback skill catalog');
+      baseExample = {
+        name: "Traveller",
+        type: "traveller",
+        img: "systems/twodsix/assets/icons/default_actor.png",
+        system: {
+          characteristics: {},
+          age: { value: 0, min: 0 },
+          finances: { cash: "0", pension: "0", payments: "0", debt: "0", livingCosts: "0", "financial-notes": "" },
+          species: "Human"
+        },
+        items: [],
+        prototypeToken: {},
+        effects: [],
+        folder: null,
+        sort: 0,
+        ownership: { default: 0 },
+        flags: {}
+      };
+      
+      // Create a comprehensive fallback catalog with correct IDs from fvtt-example-all-skills.json
+      catalog = {
+      // Base skills
+      "Admin": { id: "uF7GLv55spK90zPk", name: "Admin", groupLabel: "Admin", description: "Covers bureaucracies, paperwork and navigating official procedures; tracking inventories and records.", shortdescr: "Covers bureaucracies, paperwork and navigating official procedures; tracking inventories and records." },
+      "Advocate": { id: "dcxU5p2QXCYPlLAN", name: "Advocate", groupLabel: "Advocate", description: "Knowledge of legal codes and practice (esp. interstellar law), debate and oratory.", shortdescr: "Knowledge of legal codes and practice (esp. interstellar law), debate and oratory." },
+      "Art": { id: "FlDqhGziefjECgfH", name: "Art", groupLabel: "Art", description: "Training in creative arts; performance, composition and production across various media.", shortdescr: "Training in creative arts; performance, composition and production across various media." },
+      "Diplomat": { id: "lDhnyouJcz3msKja", name: "Diplomat", groupLabel: "Diplomat", description: "Negotiation, protocol and formal communication between groups.", shortdescr: "Negotiation, protocol and formal communication between groups." },
+      "Investigate": { id: "kDs4BfPSWSPtYi0k", name: "Investigate", groupLabel: "Investigate", description: "Observation, forensics and detailed analysis to find clues and patterns.", shortdescr: "Observation, forensics and detailed analysis to find clues and patterns." },
+      "Mechanic": { id: "HOGKob6Rq0F63uJ9", name: "Mechanic", groupLabel: "Mechanic", description: "Repairing and maintaining machines, vehicles and equipment.", shortdescr: "Repairing and maintaining machines, vehicles and equipment." },
+      "Medic": { id: "cJcBcUdbr6VZOxc6", name: "Medic", groupLabel: "Medic", description: "First aid, treatment and medical procedures.", shortdescr: "First aid, treatment and medical procedures." },
+      "Navigation": { id: "WzRMJZGij1KeKt9n", name: "Navigation", groupLabel: "Navigation", description: "Overland and surface navigation; maps, landmarks and routes.", shortdescr: "Overland and surface navigation; maps, landmarks and routes." },
+      "Persuade": { id: "y2O4mpzCFdoGH4F7", name: "Persuade", groupLabel: "Persuade", description: "Convincing others through argument, charm or intimidation.", shortdescr: "Convincing others through argument, charm or intimidation." },
+      "Streetwise": { id: "lgOSphYP79m3N7LW", name: "Streetwise", groupLabel: "Streetwise", description: "Criminal/underworld contacts, finding black markets and avoiding trouble.", shortdescr: "Criminal/underworld contacts, finding black markets and avoiding trouble." },
+      
+      // Additional base skills
+      "Astrogation": { id: "LQa4KD2608SI7KdK", name: "Astrogation", groupLabel: "Astrogation", description: "Plotting starship courses and accurate jumps.", shortdescr: "Plotting starship courses and accurate jumps." },
+      "Broker": { id: "DvDbUswnayZGbvfW", name: "Broker", groupLabel: "Broker", description: "Negotiating trades and arranging fair deals; core to commerce and speculative trade.", shortdescr: "Negotiating trades and arranging fair deals; core to commerce and speculative trade." },
+      "Carouse": { id: "OFq55gsGgakrIxoF", name: "Carouse", groupLabel: "Carouse", description: "Socialising, blending in and gathering rumours in informal settings.", shortdescr: "Socialising, blending in and gathering rumours in informal settings." },
+      "Deception": { id: "UI8s9eymhwLM2nyU", name: "Deception", groupLabel: "Deception", description: "Lies, disguise, sleight of hand and misdirection.", shortdescr: "Lies, disguise, sleight of hand and misdirection." },
+      "Explosives": { id: "AHkXljcMv8ibo5qR", name: "Explosives", groupLabel: "Explosives", description: "Handling, manufacturing and using demolitions and explosive ordnance.", shortdescr: "Handling, manufacturing and using demolitions and explosive ordnance." },
+      "Gambler": { id: "9E9KLGmjZ91FvGBK", name: "Gambler", groupLabel: "Gambler", description: "Games of chance, odds, and wagering strategy.", shortdescr: "Games of chance, odds, and wagering strategy." },
+      "Leadership": { id: "HPssf4XRsxUJYqpX", name: "Leadership", groupLabel: "Leadership", description: "Commanding others, directing actions and maintaining morale.", shortdescr: "Commanding others, directing actions and maintaining morale." },
+      "Recon": { id: "Kkz64xQKsJdhYaZa", name: "Recon", groupLabel: "Recon", description: "Spotting threats, scouting and gathering intelligence; stealthy observation.", shortdescr: "Spotting threats, scouting and gathering intelligence; stealthy observation." },
+      "Stealth": { id: "PtnWhvwSUr9LDgMi", name: "Stealth", groupLabel: "Stealth", description: "Moving quietly, hiding and avoiding detection.", shortdescr: "Moving quietly, hiding and avoiding detection." },
+      "Steward": { id: "Azi8VyZkjkCDM6o9", name: "Steward", groupLabel: "Steward", description: "Attending passengers; service, cuisine and high‑society protocol aboard ship.", shortdescr: "Attending passengers; service, cuisine and high‑society protocol aboard ship." },
+      "Survival": { id: "avXA8VXLgwyObwDY", name: "Survival", groupLabel: "Survival", description: "Enduring hostile environments; finding food, water and shelter.", shortdescr: "Enduring hostile environments; finding food, water and shelter." },
+      "Vacc Suit": { id: "RGKdVBEz1OYxYErv", name: "Vacc Suit", groupLabel: "Vacc Suit", description: "Operation of vacc suits and working in vacuum/hostile atmospheres.", shortdescr: "Operation of vacc suits and working in vacuum/hostile atmospheres." },
+      "Unarmed": { id: "cm1uSFDNjvMgSjUa", name: "Unarmed", groupLabel: "Unarmed", description: "Close combat with natural weapons, blades and bludgeons, including unarmed.", shortdescr: "Close combat with natural weapons, blades and bludgeons, including unarmed." },
+      "Untrained": { id: "Vi4sM4clOaXHBSTq", name: "Untrained", groupLabel: "", description: "", shortdescr: "" },
+      
+      // Drive specializations
+      "Drive (Wheel)": { id: "w202aRm5EwkD4OLF", name: "Drive (Wheel)", groupLabel: "Drive", description: "Operation of ground and similar vehicles depending on propulsion type. Specialization: Automobiles, groundcars and trucks.", shortdescr: "Operation of ground and similar vehicles depending on propulsion type." },
+      "Drive (Wheeled)": { id: "w202aRm5EwkD4OLF", name: "Drive (Wheeled)", groupLabel: "Drive", description: "Operation of ground and similar vehicles depending on propulsion type. Specialization: Automobiles, groundcars and trucks.", shortdescr: "Operation of ground and similar vehicles depending on propulsion type." },
+      "Drive (Hovercraft)": { id: "mUHttV1dXuLMrrW8", name: "Drive (Hovercraft)", groupLabel: "Drive", description: "Operation of ground and similar vehicles depending on propulsion type. Specialization: Hovercraft operation over land or water.", shortdescr: "Operation of ground and similar vehicles depending on propulsion type." },
+      "Drive (Mole)": { id: "dzom7FkaMvAbfMnM", name: "Drive (Mole)", groupLabel: "Drive", description: "Operation of ground and similar vehicles depending on propulsion type. Specialization: Burrowing/mole vehicles operating underground.", shortdescr: "Operation of ground and similar vehicles depending on propulsion type." },
+      "Drive (Tracked)": { id: "gqev9CBR12dgfwMg", name: "Drive (Tracked)", groupLabel: "Drive", description: "Operation of ground and similar vehicles depending on propulsion type. Specialization: Tracked vehicles (e.g., tanks).", shortdescr: "Operation of ground and similar vehicles depending on propulsion type." },
+      "Drive (Walker)": { id: "Y1uZaM9Tk5j7VPmA", name: "Drive (Walker)", groupLabel: "Drive", description: "Operation of ground and similar vehicles depending on propulsion type. Specialization: Legged/walker vehicles traversing rough terrain.", shortdescr: "Operation of ground and similar vehicles depending on propulsion type." },
+      
+      // Electronics specializations
+      "Electronics (Comms)": { id: "mKUsYly7sDi9aMqG", name: "Electronics (Comms)", groupLabel: "Electronics", description: "Operation/repair of computers, comms, sensors and remote systems. Specialization: Telecommunications, protocols, jamming and signal tricks.", shortdescr: "Operation/repair of computers, comms, sensors and remote systems." },
+      "Electronics (Computers)": { id: "DieuKSXINbME7D2N", name: "Electronics (Computers)", groupLabel: "Electronics", description: "Operation/repair of computers, comms, sensors and remote systems. Specialization: Operating and programming computers; hacking and security.", shortdescr: "Operation/repair of computers, comms, sensors and remote systems." },
+      "Electronics (Computer)": { id: "DieuKSXINbME7D2N", name: "Electronics (Computer)", groupLabel: "Electronics", description: "Operation/repair of computers, comms, sensors and remote systems. Specialization: Operating and programming computers; hacking and security.", shortdescr: "Operation/repair of computers, comms, sensors and remote systems." },
+      "Electronics (Remote Ops)": { id: "5kxlMOoT7PoStf09", name: "Electronics (Remote Ops)", groupLabel: "Electronics", description: "Operation/repair of computers, comms, sensors and remote systems. Specialization: Telepresence control of drones, robots, missiles.", shortdescr: "Operation/repair of computers, comms, sensors and remote systems." },
+      "Electronics (Sensors)": { id: "tdWllBHjRfxE3RUA", name: "Electronics (Sensors)", groupLabel: "Electronics", description: "Operation/repair of computers, comms, sensors and remote systems. Specialization: Operating and interpreting sensor systems.", shortdescr: "Operation/repair of computers, comms, sensors and remote systems." },
+      
+      // Flyer specializations
+      "Flyer (Airship)": { id: "6f0rT3sW4yugqZk3", name: "Flyer (Airship)", groupLabel: "Flyer", description: "Operation of atmospheric craft (wings, rotors, grav, etc.). Specialization: Lighter‑than‑air craft operations.", shortdescr: "Operation of atmospheric craft (wings, rotors, grav, etc.)." },
+      "Flyer (Grav)": { id: "4CmHBTO8XXNmpMIF", name: "Flyer (Grav)", groupLabel: "Flyer", description: "Operation of atmospheric craft (wings, rotors, grav, etc.). Specialization: Grav vehicles (e.g., air/rafts, g/bikes).", shortdescr: "Operation of atmospheric craft (wings, rotors, grav, etc.)." },
+      "Flyer (Ornithopter)": { id: "ul0vAUAaskVZ01NL", name: "Flyer (Ornithopter)", groupLabel: "Flyer", description: "Operation of atmospheric craft (wings, rotors, grav, etc.). Specialization: Flapping‑wing aircraft.", shortdescr: "Operation of atmospheric craft (wings, rotors, grav, etc.)." },
+      "Flyer (Rotor)": { id: "iUSRQKiBZgw1moZl", name: "Flyer (Rotor)", groupLabel: "Flyer", description: "Operation of atmospheric craft (wings, rotors, grav, etc.). Specialization: Rotorcraft and helicopters.", shortdescr: "Operation of atmospheric craft (wings, rotors, grav, etc.)." },
+      "Flyer (Wing)": { id: "Pwd8o7AE0H69W4An", name: "Flyer (Wing)", groupLabel: "Flyer", description: "Operation of atmospheric craft (wings, rotors, grav, etc.). Specialization: Fixed‑wing aircraft and gliders.", shortdescr: "Operation of atmospheric craft (wings, rotors, grav, etc.)." },
+      
+      // Gunner specializations
+      "Gunner (Capital)": { id: "HACzvdIyMhHpMgvh", name: "Gunner (Capital)", groupLabel: "Gunner", description: "Operation of ship-mounted weapons (turrets, ortillery, screens, capital). Specialization: Bay and spinal mount weaponry.", shortdescr: "Operation of ship-mounted weapons (turrets, ortillery, screens, capital)." },
+      "Gunner (Ortillery)": { id: "QvBkDyjeM4UsCm78", name: "Gunner (Ortillery)", groupLabel: "Gunner", description: "Operation of ship-mounted weapons (turrets, ortillery, screens, capital). Specialization: Orbital artillery for planetary bombardment.", shortdescr: "Operation of ship-mounted weapons (turrets, ortillery, screens, capital)." },
+      "Gunner (Screen)": { id: "KuldZT1XP19A5zCs", name: "Gunner (Screen)", groupLabel: "Gunner", description: "Operation of ship-mounted weapons (turrets, ortillery, screens, capital). Specialization: Operating energy screens (meson, Black Globe).", shortdescr: "Operation of ship-mounted weapons (turrets, ortillery, screens, capital)." },
+      "Gunner (Turret)": { id: "VRX6CcmdSrNZAjLQ", name: "Gunner (Turret)", groupLabel: "Gunner", description: "Operation of ship-mounted weapons (turrets, ortillery, screens, capital). Specialization: Ship turret operation (beam, missile, sand, etc.).", shortdescr: "Operation of ship-mounted weapons (turrets, ortillery, screens, capital)." },
+      
+      // Profession specializations
+      "Profession (Belter)": { id: "bN8ZVV0EWGiJEd98", name: "Profession (Belter)", groupLabel: "Profession", description: "Applied trades and vocations; practical industrial skills. Specialization: Asteroid mining and related trades.", shortdescr: "Applied trades and vocations; practical industrial skills." },
+      "Profession (Biologicals)": { id: "tI5PLRyFlKesQ9j3", name: "Profession (Biologicals)", groupLabel: "Profession", description: "Applied trades and vocations; practical industrial skills. Specialization: Biotech manufacturing and handling.", shortdescr: "Applied trades and vocations; practical industrial skills." },
+      "Profession (Civil Engineering)": { id: "og8JOXc9AfhEySDn", name: "Profession (Civil Engineering)", groupLabel: "Profession", description: "Applied trades and vocations; practical industrial skills. Specialization: Infrastructure and construction planning.", shortdescr: "Applied trades and vocations; practical industrial skills." },
+      "Profession (Construction)": { id: "4gl5jMB86ZlMxuzQ", name: "Profession (Construction)", groupLabel: "Profession", description: "Applied trades and vocations; practical industrial skills. Specialization: On‑site construction skills.", shortdescr: "Applied trades and vocations; practical industrial skills." },
+      "Profession (Hydroponics)": { id: "ZY1mD4EQqK3TG4xh", name: "Profession (Hydroponics)", groupLabel: "Profession", description: "Applied trades and vocations; practical industrial skills. Specialization: Soilless cultivation and food production.", shortdescr: "Applied trades and vocations; practical industrial skills." },
+      "Profession (Other)": { id: "QEdrP2ZGwXDLrf5K", name: "Profession (Other)", groupLabel: "Profession", description: "Applied trades and vocations; practical industrial skills. Specialization: Another specific profession.", shortdescr: "Applied trades and vocations; practical industrial skills." },
+      "Profession (Polymers)": { id: "P7sx3GQgmrLQZQn4", name: "Profession (Polymers)", groupLabel: "Profession", description: "Applied trades and vocations; practical industrial skills. Specialization: Plastics and synthetic materials processes.", shortdescr: "Applied trades and vocations; practical industrial skills." },
+      
+      // Science specializations
+      "Science (Archaeology)": { id: "5cntrIjeyZlajyZz", name: "Science (Archaeology)", groupLabel: "Science", description: "Academic disciplines and research methods across multiple fields. Specialization: Excavation methods and analysis of past cultures.", shortdescr: "Academic disciplines and research methods across multiple fields." },
+      "Science (Astronomy)": { id: "AOO33Q6g3I6QNum2", name: "Science (Astronomy)", groupLabel: "Science", description: "Academic disciplines and research methods across multiple fields. Specialization: Observation of celestial bodies and phenomena.", shortdescr: "Academic disciplines and research methods across multiple fields." },
+      "Science (Biology)": { id: "BWX2vAlodtss1KF0", name: "Science (Biology)", groupLabel: "Science", description: "Academic disciplines and research methods across multiple fields. Specialization: Study of living organisms and ecosystems.", shortdescr: "Academic disciplines and research methods across multiple fields." },
+      "Science (Chemistry)": { id: "qFq6pWx15s6ciCMG", name: "Science (Chemistry)", groupLabel: "Science", description: "Academic disciplines and research methods across multiple fields. Specialization: Substances, reactions and materials.", shortdescr: "Academic disciplines and research methods across multiple fields." },
+      "Science (Cosmology)": { id: "Fu9uiOonjtN9FdoZ", name: "Science (Cosmology)", groupLabel: "Science", description: "Academic disciplines and research methods across multiple fields. Specialization: Origins and structure of the universe.", shortdescr: "Academic disciplines and research methods across multiple fields." },
+      "Science (Cybernetics)": { id: "jWLAlTGNRefjZ8fi", name: "Science (Cybernetics)", groupLabel: "Science", description: "Academic disciplines and research methods across multiple fields. Specialization: Human‑machine systems and augmentation.", shortdescr: "Academic disciplines and research methods across multiple fields." },
+      "Science (Economics)": { id: "FS7PCGCA4zKlBbgS", name: "Science (Economics)", groupLabel: "Science", description: "Academic disciplines and research methods across multiple fields. Specialization: Markets, trade and resource allocation.", shortdescr: "Academic disciplines and research methods across multiple fields." },
+      "Science (Genetics)": { id: "WQllQD3tfHrrR1Xf", name: "Science (Genetics)", groupLabel: "Science", description: "Academic disciplines and research methods across multiple fields. Specialization: Heredity, DNA and manipulation.", shortdescr: "Academic disciplines and research methods across multiple fields." },
+      "Science (History)": { id: "SYxrP5mb7Q8CZMPn", name: "Science (History)", groupLabel: "Science", description: "Academic disciplines and research methods across multiple fields. Specialization: Study of historical events and trends.", shortdescr: "Academic disciplines and research methods across multiple fields." },
+      "Science (Linguistics)": { id: "r5DnFBvNpZXcZzPz", name: "Science (Linguistics)", groupLabel: "Science", description: "Academic disciplines and research methods across multiple fields. Specialization: Structure and evolution of language.", shortdescr: "Academic disciplines and research methods across multiple fields." },
+      "Science (Philosophy)": { id: "sY4ZY8AFtGlqg1Ft", name: "Science (Philosophy)", groupLabel: "Science", description: "Academic disciplines and research methods across multiple fields. Specialization: Logic, ethics and epistemology.", shortdescr: "Academic disciplines and research methods across multiple fields." },
+      "Science (Physics)": { id: "ulAasG6Xv3Tgo3xf", name: "Science (Physics)", groupLabel: "Science", description: "Academic disciplines and research methods across multiple fields. Specialization: Matter, energy and fundamental forces.", shortdescr: "Academic disciplines and research methods across multiple fields." },
+      "Science (Planetology)": { id: "Q7IeYEHaZOuRCCxw", name: "Science (Planetology)", groupLabel: "Science", description: "Academic disciplines and research methods across multiple fields. Specialization: Planets, geology and atmospheres.", shortdescr: "Academic disciplines and research methods across multiple fields." },
+      "Science (Psionicology)": { id: "6RMkfbkdjBr0Ocyv", name: "Science (Psionicology)", groupLabel: "Science", description: "Academic disciplines and research methods across multiple fields. Specialization: Study of psionics (setting‑dependent).", shortdescr: "Academic disciplines and research methods across multiple fields." },
+      "Science (Psychology)": { id: "NgrbnbFdgtJxMvQV", name: "Science (Psychology)", groupLabel: "Science", description: "Academic disciplines and research methods across multiple fields. Specialization: Mind, behaviour and cognition.", shortdescr: "Academic disciplines and research methods across multiple fields." },
+      "Science (Robotics)": { id: "HaBVkqx6RjvEEWgQ", name: "Science (Robotics)", groupLabel: "Science", description: "Academic disciplines and research methods across multiple fields. Specialization: Autonomous systems design and theory.", shortdescr: "Academic disciplines and research methods across multiple fields." },
+      "Science (Sophontology)": { id: "vXtGULK7NGwnnjKv", name: "Science (Sophontology)", groupLabel: "Science", description: "Academic disciplines and research methods across multiple fields. Specialization: Study of sophonts and cultures.", shortdescr: "Academic disciplines and research methods across multiple fields." },
+        "Science (Xenology)": { id: "zuq0tjLlHbl7EySy", name: "Science (Xenology)", groupLabel: "Science", description: "Academic disciplines and research methods across multiple fields. Specialization: Extraterrestrial life and cultures.", shortdescr: "Academic disciplines and research methods across multiple fields." },
+      
+      // Athletics specializations
+      "Athletics (Dexterity)": { id: "e83r6Sc0RlaijYEB", name: "Athletics (Dexterity)", groupLabel: "Athletics", description: "Physical training; augments STR/DEX/END for feats, movement and adverse gravity work. Specialization: Climbing, sprinting, throwing; key in low/zero‑G environments.", shortdescr: "Physical training; augments STR/DEX/END for feats, movement and adverse gravity work." },
+      "Athletics (Endurance)": { id: "j8kfzNW5DVNSz1Jk", name: "Athletics (Endurance)", groupLabel: "Athletics", description: "Physical training; augments STR/DEX/END for feats, movement and adverse gravity work. Specialization: Long‑distance running, hiking, swimming.", shortdescr: "Physical training; augments STR/DEX/END for feats, movement and adverse gravity work." },
+      "Athletics (Strength)": { id: "Np06Dm26HnxBv3At", name: "Athletics (Strength)", groupLabel: "Athletics", description: "Physical training; augments STR/DEX/END for feats, movement and adverse gravity work. Specialization: Feats of strength and high‑G exertion.", shortdescr: "Physical training; augments STR/DEX/END for feats, movement and adverse gravity work." },
+      
+      // Gun Combat specializations
+      "Gun Combat (Archaic)": { id: "ABRk5Aep41vuSTJU", name: "Gun Combat (Archaic)", groupLabel: "Gun Combat", description: "Personal-scale ranged firearms (archaic, slug, energy). Specialization: Bows, crossbows and other non‑thrown archaic ranged weapons.", shortdescr: "Personal-scale ranged firearms (archaic, slug, energy)." },
+      "Gun Combat (Energy)": { id: "PnSIDW0zEhrsXoIn", name: "Gun Combat (Energy)", groupLabel: "Gun Combat", description: "Personal-scale ranged firearms (archaic, slug, energy). Specialization: Lasers, plasma and energy small arms.", shortdescr: "Personal-scale ranged firearms (archaic, slug, energy)." },
+      "Gun Combat (Slug)": { id: "HeLVjl7LbYwW0NCd", name: "Gun Combat (Slug)", groupLabel: "Gun Combat", description: "Personal-scale ranged firearms (archaic, slug, energy). Specialization: Slug throwers (autorifles, gauss, etc.).", shortdescr: "Personal-scale ranged firearms (archaic, slug, energy)." },
+      "Gun Combat": { id: "ABRk5Aep41vuSTJU", name: "Gun Combat", groupLabel: "Gun Combat", description: "Personal-scale ranged firearms (archaic, slug, energy).", shortdescr: "Personal-scale ranged firearms (archaic, slug, energy)." },
+      
+      // Melee specializations
+      "Melee (Blade)": { id: "0bmCGDZwiWo1IF9P", name: "Melee (Blade)", groupLabel: "Melee", description: "Close combat with natural weapons, blades and bludgeons, including unarmed. Specialization: Swords, knives and edged weapons.", shortdescr: "Close combat with natural weapons, blades and bludgeons, including unarmed." },
+      "Melee (Bludgeon)": { id: "BiRUI0g4VITMTZrO", name: "Melee (Bludgeon)", groupLabel: "Melee", description: "Close combat with natural weapons, blades and bludgeons, including unarmed. Specialization: Clubs, staves and blunt weapons.", shortdescr: "Close combat with natural weapons, blades and bludgeons, including unarmed." },
+      "Melee (Natural)": { id: "ugX6eNvJSCFWmeDw", name: "Melee (Natural)", groupLabel: "Melee", description: "Close combat with natural weapons, blades and bludgeons, including unarmed. Specialization: Claws, teeth or other natural weapons.", shortdescr: "Close combat with natural weapons, blades and bludgeons, including unarmed." },
+      "Melee (Unarmed)": { id: "yeZkGVbziff4PA8e", name: "Melee (Unarmed)", groupLabel: "Melee", description: "Close combat with natural weapons, blades and bludgeons, including unarmed. Specialization: Punches, grapples and natural body strikes.", shortdescr: "Close combat with natural weapons, blades and bludgeons, including unarmed." }
+      };
+      
+      console.log('Using fallback skill catalog with', Object.keys(catalog).length, 'skills');
+    }
 
     const obj = buildFoundryExport(catalog, baseExample);
     if (!obj) return;
     const dataStr = 'data:application/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(obj, null, 2));
     const a = document.createElement('a');
     a.setAttribute('href', dataStr);
-    a.setAttribute('download', (character?.name || 'traveller') + '-fvtt.json');
+    a.setAttribute('download', 'traveller-fvtt.json');
     document.body.appendChild(a);
     a.click();
     a.remove();
@@ -1502,7 +1768,19 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
         
         // If this was a skill improvement choice, apply the improvements
         if (isSkillImprovement) {
-          const newImprovements = resetImprovementsRef.current ? {} : { ...skillImprovements };
+          // Start with preserved improvements to maintain option 1 and option 2 improvements
+          const newImprovements: {[key: string]: number} = {};
+          if (selectedOptionOneSkill && skillImprovements[selectedOptionOneSkill]) {
+            newImprovements[selectedOptionOneSkill] = skillImprovements[selectedOptionOneSkill];
+          }
+          // Preserve option 2 improvements
+          if (selectedOptionTwoSkills && selectedOptionTwoSkills.length > 0) {
+            selectedOptionTwoSkills.forEach(skillName => {
+              if (skillImprovements[skillName]) {
+                newImprovements[skillName] = skillImprovements[skillName];
+              }
+            });
+          }
           const skillName = `${currentChoice.skillName} (${displaySpecialization})`;
           // Determine delta to reach level 1 if below 1; otherwise block path should've prevented this
           const combined = combineSkills(selectedBackgroundPackage?.skills || [], selectedCareerPackage?.skills || []);
@@ -1514,8 +1792,31 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
           if (delta > 0) {
             newImprovements[skillName] = (newImprovements[skillName] || 0) + delta;
           }
+          
+          // Also apply other skills from the dual skill option that don't need specializations
+          const selectedOption = availableSkillOptions[selectedSkillImprovement!];
+          const allSkills = selectedOption.split(' and ');
+          const skillsNeedingChoices = skillImprovementChoices.map(c => c.skillName);
+          
+          allSkills.forEach(skill => {
+            const trimmed = skill.trim();
+            const base = trimmed.split(' (')[0];
+            
+            // Skip skills that needed specialization choices (they're handled above)
+            if (skillsNeedingChoices.includes(base)) {
+              return;
+            }
+            
+            // Apply skills that don't need specializations
+            const existingSkill = combined.find(s => s.name === trimmed || s.name.split(' (')[0] === base);
+            const currentLevel = existingSkill ? existingSkill.level : 0;
+            const delta = Math.max(0, 1 - currentLevel);
+            if (delta > 0) {
+              newImprovements[trimmed] = (newImprovements[trimmed] || 0) + delta;
+            }
+          });
+          
           setSkillImprovements(newImprovements);
-          resetImprovementsRef.current = false;
           
           // Create skill improvement event
           const improvementEvent = CharacterHistoryManager.createGainEvent(
@@ -1729,37 +2030,63 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
     setPointPool(pointPool + 1);
   };
 
-  const renderCharacteristicsStep = (): React.ReactElement => (
-    <div className="card p-8">
-      <h2 className="text-2xl font-bold text-white mb-6">Step 1: Set Characteristics</h2>
-      <p className="text-slate-400 mb-6">
-        All characteristics start at 7. You can move points from one stat to another. Minimum {minStat}, maximum {maxStat}.
-      </p>
+  const renderCharacteristicsStep = (): React.ReactElement => {
+    // Debug: Check rules object
+    console.log('PackageBasedCreation rules:', _rules);
+    console.log('DM Table:', _rules?.characterCreation?.dmTable);
+    
+    return (
+      <div className="card p-8">
+        <h2 className="text-2xl font-bold text-white mb-6">Step 1: Set Characteristics</h2>
+        <p className="text-slate-400 mb-6">
+          All characteristics start at 7. You can move points from one stat to another. Minimum {minStat}, maximum {maxStat}.
+        </p>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-        {Object.entries(characteristics).map(([char, value]) => (
-          <div key={char} className="p-4 bg-slate-800 rounded-lg text-center">
-            <div className="text-slate-400 text-sm font-medium">{char}</div>
-            <div className="flex items-center justify-center gap-3 mt-2">
-              <button
-                onClick={() => decrementStat(char as keyof typeof characteristics)}
-                className="px-2 py-1 rounded bg-slate-700 text-white disabled:opacity-40"
-                disabled={value <= minStat}
-              >
-                −
-              </button>
-              <div className="text-2xl font-bold text-white w-10 text-center">{value}</div>
-              <button
-                onClick={() => incrementStat(char as keyof typeof characteristics)}
-                className="px-2 py-1 rounded bg-slate-700 text-white disabled:opacity-40"
-                disabled={pointPool <= 0 || value >= maxStat}
-              >
-                +
-              </button>
+        {Object.entries(characteristics).map(([char, value]) => {
+          // Fallback DM calculation if rules are not available
+          let dm = 0;
+          if (_rules && _rules.characterCreation && _rules.characterCreation.dmTable) {
+            dm = CharacteristicCalculator.calculateModifier(value, _rules);
+          } else {
+            // Fallback calculation using standard Traveller DM table
+            if (value === 0) dm = -3;
+            else if (value >= 1 && value <= 2) dm = -2;
+            else if (value >= 3 && value <= 5) dm = -1;
+            else if (value >= 6 && value <= 8) dm = 0;
+            else if (value >= 9 && value <= 11) dm = 1;
+            else if (value >= 12 && value <= 14) dm = 2;
+            else if (value >= 15) dm = 3;
+          }
+          const dmString = dm >= 0 ? `+${dm}` : `${dm}`;
+          
+          return (
+            <div key={char} className="p-4 bg-slate-800 rounded-lg text-center">
+              <div className="text-slate-400 text-sm font-medium">{char}</div>
+              <div className="flex items-center justify-center gap-3 mt-2">
+                <button
+                  onClick={() => decrementStat(char as keyof typeof characteristics)}
+                  className="px-2 py-1 rounded bg-slate-700 text-white disabled:opacity-40"
+                  disabled={value <= minStat}
+                >
+                  −
+                </button>
+                <div className="text-2xl font-bold text-white w-10 text-center">{value}</div>
+                <button
+                  onClick={() => incrementStat(char as keyof typeof characteristics)}
+                  className="px-2 py-1 rounded bg-slate-700 text-white disabled:opacity-40"
+                  disabled={pointPool <= 0 || value >= maxStat}
+                >
+                  +
+                </button>
+              </div>
+              <div className="text-sm text-blue-400 font-medium mt-1">
+                DM: {dmString}
+              </div>
+              <div className="text-xs text-slate-500 mt-1">min {minStat} • max {maxStat}</div>
             </div>
-            <div className="text-xs text-slate-500 mt-2">min {minStat} • max {maxStat}</div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <div className="flex items-center justify-between">
@@ -1772,7 +2099,8 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
         </button>
       </div>
     </div>
-  );
+    );
+  };
 
 
 
@@ -1989,12 +2317,24 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
   ];
 
   const handleSkillImprovement = (optionIndex: number) => {
-    // Clear previous skill improvements if changing selection
-    if (selectedSkillImprovement !== null && selectedSkillImprovement !== optionIndex) {
-      // Mark to reset synchronously for this selection flow
-      resetImprovementsRef.current = true;
-      setSkillImprovements({});
+    // Always clear previous skill improvements when selecting any option
+    // This prevents double-application when reselecting the same option
+    resetImprovementsRef.current = true;
+    
+    // Preserve option 1 and option 2 improvements if they exist
+    const preservedImprovements: {[key: string]: number} = {};
+    if (selectedOptionOneSkill && skillImprovements[selectedOptionOneSkill]) {
+      preservedImprovements[selectedOptionOneSkill] = skillImprovements[selectedOptionOneSkill];
     }
+    // Preserve option 2 improvements
+    if (selectedOptionTwoSkills && selectedOptionTwoSkills.length > 0) {
+      selectedOptionTwoSkills.forEach(skillName => {
+        if (skillImprovements[skillName]) {
+          preservedImprovements[skillName] = skillImprovements[skillName];
+        }
+      });
+    }
+    setSkillImprovements(preservedImprovements);
     
     // Set the selected skill improvement option
     setSelectedSkillImprovement(optionIndex);
@@ -2087,13 +2427,15 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
       }
     });
     
+    // Always store the improvement option for dual skills
+    setSkillImprovementChoices(choices);
+    
     if (choices.length > 0) {
-      // Store the improvement option and show specialization choices
-      setSkillImprovementChoices(choices);
+      // Show specialization choices for skills that need them
       setShowSkillChoiceModal(true);
     } else {
       // No specialization choices needed, apply improvements directly
-      const newImprovements = resetImprovementsRef.current ? {} : { ...skillImprovements };
+      const newImprovements: {[key: string]: number} = {...preservedImprovements};
       skills.forEach(skill => {
         const trimmed = skill.trim();
         const base = trimmed.split(' (')[0];
@@ -2105,7 +2447,6 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
         }
       });
       setSkillImprovements(newImprovements);
-      resetImprovementsRef.current = false;
       
       // Create skill improvement event
       const improvementEvent = CharacterHistoryManager.createGainEvent(
@@ -2489,8 +2830,20 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
 
           {selectedCareerOption === 0 && improvementPhase === 'option' && (
             <div className="grid md:grid-cols-2 gap-3 mb-8">
-              {combineSkills(selectedCareerPackage.skills, [])
-                .filter(s => s.level >= 1)
+              {(() => {
+                const allSkills = combineSkills(selectedCareerPackage.skills, []);
+                const filteredSkills = allSkills.filter(s => {
+                  // Find the original skill in the career package to check its offered level
+                  const originalSkill = selectedCareerPackage.skills.find(skill => {
+                    const parsed = parseSkillString(skill);
+                    return parsed.baseSkill === s.name.split(' (')[0];
+                  });
+                  if (!originalSkill) return false;
+                  const parsed = parseSkillString(originalSkill);
+                  return parsed.level >= 1;
+                });
+                return filteredSkills;
+              })()
                 .map(s => {
                   const current = combineSkills(selectedBackgroundPackage?.skills || [], selectedCareerPackage?.skills || []);
                   const existing = current.find(cs => cs.name === s.name) || s;
@@ -2500,11 +2853,10 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
                     <button key={s.name}
                       onClick={() => {
                         setSelectedOptionOneSkill(s.name);
-                        resetImprovementsRef.current = true;
+                        // Clear previous improvements and apply new one
                         const newImp: {[key:string]:number} = {};
                         if (delta > 0) newImp[s.name] = delta;
                         setSkillImprovements(newImp);
-                        resetImprovementsRef.current = false;
                       }}
                       className={`p-3 rounded border text-left transition-colors ${selected ? 'bg-blue-500/20 border-blue-400 text-blue-200' : 'bg-slate-700 border-slate-600 text-slate-300 hover:bg-slate-600'}`}
                     >
@@ -2529,30 +2881,52 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
                   return (
                     <button key={s.name}
                       onClick={() => {
+                        // Don't allow selection if skill is already at level 2 or higher
+                        if (existing.level >= 2) return;
+                        
                         const next = selected 
                           ? selectedOptionTwoSkills.filter(n => n !== s.name)
                           : selectedOptionTwoSkills.length < 3 
                             ? [...selectedOptionTwoSkills, s.name]
                             : selectedOptionTwoSkills;
                         setSelectedOptionTwoSkills(next);
-                        // Recompute improvements
-                        resetImprovementsRef.current = true;
+                        // Recompute improvements, preserving option 1 improvements
                         const newImp: {[key:string]:number} = {};
+                        // Preserve option 1 improvement if it exists
+                        if (selectedOptionOneSkill && skillImprovements[selectedOptionOneSkill]) {
+                          newImp[selectedOptionOneSkill] = skillImprovements[selectedOptionOneSkill];
+                          console.log('Option 2: Preserving option 1 improvement:', selectedOptionOneSkill, skillImprovements[selectedOptionOneSkill]);
+                        }
                         next.forEach(name => {
                           const cur = current.find(cs => cs.name === name);
                           const inc = cur && cur.level < 2 ? 1 : 0;
                           if (inc > 0) newImp[name] = inc;
                         });
+                        console.log('Option 2: Setting skill improvements:', newImp);
                         setSkillImprovements(newImp);
-                        resetImprovementsRef.current = false;
                       }}
-                      className={`p-3 rounded border text-left transition-colors ${selected ? 'bg-blue-500/20 border-blue-400 text-blue-200' : 'bg-slate-700 border-slate-600 text-slate-300 hover:bg-slate-600'}`}
+                      className={`p-3 rounded border text-left transition-colors ${
+                        existing.level >= 2 
+                          ? 'bg-slate-800 border-slate-700 text-slate-500 cursor-not-allowed' 
+                          : selected 
+                            ? 'bg-blue-500/20 border-blue-400 text-blue-200' 
+                            : 'bg-slate-700 border-slate-600 text-slate-300 hover:bg-slate-600'
+                      }`}
                     >
                       <div className="flex justify-between">
                         <span className="font-semibold text-white">{s.name}</span>
                         <span className="text-slate-400 text-xs">current {existing.level} {willInc===0 && '(max 2 reached)'}</span>
                       </div>
-                      <div className="text-xs text-slate-400">{selected ? 'Selected' : selectedOptionTwoSkills.length>=3 ? 'Max 3 selections' : 'Click to select (up to 3)'}</div>
+                      <div className="text-xs text-slate-400">
+                        {existing.level >= 2 
+                          ? 'Already at max level (2)' 
+                          : selected 
+                            ? 'Selected' 
+                            : selectedOptionTwoSkills.length>=3 
+                              ? 'Max 3 selections' 
+                              : 'Click to select (up to 3)'
+                        }
+                      </div>
                     </button>
                   );
                 })}
@@ -2639,15 +3013,13 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
                   if (index === 5) {
                     setCharacteristicBonuses(prev => ({
                       ...prev,
-                      SOC: (prev.SOC || 0) + 1
+                      SOC: 1 // Set to 1, not add to existing
                     }));
                   } else {
                     // Clear SOC bonus if selecting a different benefit
                     setCharacteristicBonuses(prev => {
                       const newBonuses = { ...prev };
-                      if (newBonuses.SOC) {
-                        delete newBonuses.SOC;
-                      }
+                      delete newBonuses.SOC;
                       return newBonuses;
                     });
                   }
@@ -2764,6 +3136,9 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
             
             <div className="grid grid-cols-1 gap-2 mb-6">
               {(() => {
+                console.log('Final skills calculation - skillImprovements:', skillImprovements);
+                console.log('Final skills calculation - selectedOptionOneSkill:', selectedOptionOneSkill);
+                console.log('Final skills calculation - selectedOptionTwoSkills:', selectedOptionTwoSkills);
                 // Start from combined skills
                 const combined = combineSkills(selectedBackgroundPackage.skills, selectedCareerPackage.skills)
                   .map(skill => {
@@ -2783,7 +3158,7 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
                     combined.push({
                       name: improvedName,
                       level: 0,
-                      source: 'package',
+                      source: 'improvement',
                       finalLevel,
                       improved: inc || 0,
                     } as any);
@@ -2826,9 +3201,9 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
                     </div>
                     <div className="flex items-center gap-1 ml-2">
                       <span className="text-xs text-slate-400">
-                        {skill.source === 'package' ? '📦' : skill.source === 'background' ? '🏠' : '💼'}
+                        {skill.source === 'improvement' ? '✨' : skill.source === 'background' ? '🏠' : skill.source === 'career' ? '💼' : '📦'}
                       </span>
-                      {skill.improved > 0 && <span className="text-xs text-green-400">✨</span>}
+                      {skill.improved > 0 && <span className="text-xs text-green-400">+{skill.improved}</span>}
                     </div>
                   </div>
                 </div>
@@ -2861,6 +3236,7 @@ export const PackageBasedCreation: React.FC<PackageBasedCreationProps> = ({
                   <span>🏠 Background</span>
                   <span>💼 Career</span>
                   <span>📦 Combined</span>
+                  <span>✨ Improvement</span>
                 </div>
               </div>
             </div>

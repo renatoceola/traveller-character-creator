@@ -1,0 +1,5132 @@
+{
+  "name": "All Skills",
+  "type": "traveller",
+  "img": "systems/twodsix/assets/icons/default_actor.png",
+  "system": {
+    "name": "",
+    "characteristics": {
+      "strength": {
+        "key": "strength",
+        "value": 7,
+        "damage": 0,
+        "label": "Strength",
+        "shortLabel": "STR",
+        "displayShortLabel": ""
+      },
+      "dexterity": {
+        "key": "dexterity",
+        "value": 7,
+        "damage": 0,
+        "label": "Dexterity",
+        "shortLabel": "DEX",
+        "displayShortLabel": ""
+      },
+      "endurance": {
+        "key": "endurance",
+        "value": 7,
+        "damage": 0,
+        "label": "Endurance",
+        "shortLabel": "END",
+        "displayShortLabel": ""
+      },
+      "intelligence": {
+        "key": "intelligence",
+        "value": 7,
+        "damage": 0,
+        "label": "Intelligence",
+        "shortLabel": "INT",
+        "displayShortLabel": ""
+      },
+      "education": {
+        "key": "education",
+        "value": 7,
+        "damage": 0,
+        "label": "Education",
+        "shortLabel": "EDU",
+        "displayShortLabel": ""
+      },
+      "socialStanding": {
+        "key": "socialStanding",
+        "value": 7,
+        "damage": 0,
+        "label": "SocialStanding",
+        "shortLabel": "SOC",
+        "displayShortLabel": ""
+      },
+      "psionicStrength": {
+        "key": "psionicStrength",
+        "value": 7,
+        "damage": 0,
+        "label": "PsionicStrength",
+        "shortLabel": "PSI",
+        "displayShortLabel": ""
+      },
+      "stamina": {
+        "key": "stamina",
+        "value": 7,
+        "damage": 0,
+        "label": "Stamina",
+        "shortLabel": "STA",
+        "displayShortLabel": ""
+      },
+      "lifeblood": {
+        "key": "lifeblood",
+        "value": 7,
+        "damage": 0,
+        "label": "Lifeblood",
+        "shortLabel": "LFB",
+        "displayShortLabel": ""
+      },
+      "alternative1": {
+        "key": "alternative1",
+        "value": 7,
+        "damage": 0,
+        "label": "Alternative1",
+        "shortLabel": "ALT1",
+        "displayShortLabel": ""
+      },
+      "alternative2": {
+        "key": "alternative2",
+        "value": 7,
+        "damage": 0,
+        "label": "Alternative2",
+        "shortLabel": "ALT2",
+        "displayShortLabel": ""
+      },
+      "alternative3": {
+        "key": "alternative3",
+        "value": 7,
+        "damage": 0,
+        "label": "Alternative3",
+        "shortLabel": "ALT3",
+        "displayShortLabel": ""
+      }
+    },
+    "characteristicEdit": false,
+    "primaryArmor": {
+      "value": 0
+    },
+    "radiationProtection": {
+      "value": 0
+    },
+    "armorType": "nothing",
+    "armorDM": 0,
+    "conditions": {
+      "woundedEffect": 0,
+      "encumberedEffect": 0
+    },
+    "movement": {
+      "burrow": null,
+      "climb": null,
+      "fly": null,
+      "swim": null,
+      "walk": 10,
+      "units": "m",
+      "hover": false
+    },
+    "docReference": [
+      ""
+    ],
+    "pdfReference": {
+      "type": "",
+      "href": "",
+      "label": ""
+    },
+    "radiationDose": {
+      "value": 0,
+      "max": 0,
+      "min": 0,
+      "label": ""
+    },
+    "encumbrance": {
+      "value": 0,
+      "max": 0,
+      "min": 0
+    },
+    "hits": {
+      "value": 21,
+      "max": 21,
+      "min": 0,
+      "lastDelta": 0
+    },
+    "untrainedSkill": "Vi4sM4clOaXHBSTq",
+    "description": "",
+    "notes": "",
+    "bio": "",
+    "homeWorld": "",
+    "nationality": "",
+    "species": "",
+    "age": {
+      "value": 18,
+      "min": 0
+    },
+    "gender": "",
+    "heroPoints": 2,
+    "contacts": "",
+    "secondaryArmor": {
+      "value": 0
+    },
+    "finances": {
+      "cash": "0",
+      "pension": "0",
+      "payments": "0",
+      "debt": "0",
+      "livingCosts": "0",
+      "financial-notes": ""
+    },
+    "financeValues": {
+      "cash": 0,
+      "pension": 0,
+      "payment": 0,
+      "debt": 0,
+      "livingCosts": 0
+    },
+    "hideStoredItems": {
+      "weapon": false,
+      "armor": false,
+      "augment": false,
+      "equipment": false,
+      "consumable": false,
+      "attachment": false,
+      "junk": false
+    },
+    "experience": {
+      "value": 0,
+      "totalEarned": 0
+    },
+    "xpNotes": "",
+    "displaySkillGroup": {}
+  },
+  "prototypeToken": {
+    "name": "All Skills",
+    "displayName": 40,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/twodsix/assets/icons/default_actor.png",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 1,
+    "displayBars": 40,
+    "bar1": {
+      "attribute": "hits"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": true,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 1,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null,
+    "flags": {},
+    "randomImg": false,
+    "appendNumber": false,
+    "prependAdjective": false
+  },
+  "items": [
+    {
+      "name": "Untrained",
+      "type": "skills",
+      "_id": "Vi4sM4clOaXHBSTq",
+      "system": {
+        "characteristic": "NONE",
+        "name": "",
+        "description": "",
+        "type": "",
+        "docReference": [
+          ""
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "priorType": "unknown",
+        "value": -3,
+        "shortdescr": "",
+        "subtype": "",
+        "prereq": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": ""
+      },
+      "flags": {
+        "twodsix": {
+          "untrainedSkill": true
+        }
+      },
+      "img": "./systems/twodsix/assets/icons/jack-of-all-trades.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "lastModifiedBy": null
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Unarmed",
+      "type": "weapon",
+      "img": "systems/twodsix/assets/icons/unarmed.svg",
+      "system": {
+        "armorPiercing": "0",
+        "description": "Unarmed attack",
+        "type": "weapon",
+        "damage": "1d6",
+        "quantity": 1,
+        "skill": "Vi4sM4clOaXHBSTq",
+        "equipped": "equipped",
+        "damageType": "bludgeoning",
+        "range": "Melee",
+        "rangeBand": "none",
+        "handlingModifiers": "",
+        "name": "",
+        "docReference": [
+          ""
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "priorType": "unknown",
+        "techLevel": 0,
+        "shortdescr": "",
+        "weight": 0,
+        "price": 0,
+        "traits": [],
+        "consumables": [],
+        "useConsumableForAttack": "",
+        "skillModifier": 0,
+        "associatedSkillName": "",
+        "target": {
+          "value": null,
+          "width": null,
+          "units": "m",
+          "type": "none"
+        },
+        "damageBonus": 0,
+        "magazineSize": 0,
+        "ammo": 0,
+        "magazineCost": 0,
+        "lawLevel": "",
+        "weaponType": "",
+        "rateOfFire": "",
+        "doubleTap": false,
+        "recoil": false,
+        "features": "",
+        "parryAV": 0,
+        "isShield": false,
+        "meleeRangeModifier": "0",
+        "customCT": {
+          "armor": {
+            "nothing": "0",
+            "jack": "0",
+            "mesh": "0",
+            "cloth": "0",
+            "reflec": "0",
+            "ablat": "0",
+            "combat": "0"
+          },
+          "range": {
+            "close": "0",
+            "short": "0",
+            "medium": "0",
+            "long": "0",
+            "veryLong": "0"
+          }
+        }
+      },
+      "_id": "cm1uSFDNjvMgSjUa",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "lastModifiedBy": null
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 64"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Covers bureaucracies, paperwork and navigating official procedures; tracking inventories and records.",
+        "shortdescr": "Covers bureaucracies, paperwork and navigating official procedures; tracking inventories and records.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Admin",
+        "name": "Admin",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604189,
+        "modifiedTime": 1757178604189,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Admin",
+      "_id": "uF7GLv55spK90zPk",
+      "sort": 1550000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 64"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Knowledge of legal codes and practice (esp. interstellar law), debate and oratory.",
+        "shortdescr": "Knowledge of legal codes and practice (esp. interstellar law), debate and oratory.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Advocate",
+        "name": "Advocate",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604214,
+        "modifiedTime": 1757178604214,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Advocate",
+      "_id": "dcxU5p2QXCYPlLAN",
+      "sort": 1650000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 65"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Plotting starship courses and accurate jumps.",
+        "shortdescr": "Plotting starship courses and accurate jumps.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Astrogation",
+        "name": "Astrogation",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604236,
+        "modifiedTime": 1757178604236,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Astrogation",
+      "_id": "LQa4KD2608SI7KdK",
+      "sort": 1900000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 66"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Negotiating trades and arranging fair deals; core to commerce and speculative trade.",
+        "shortdescr": "Negotiating trades and arranging fair deals; core to commerce and speculative trade.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Broker",
+        "name": "Broker",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604259,
+        "modifiedTime": 1757178604259,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Broker",
+      "_id": "DvDbUswnayZGbvfW",
+      "sort": 1800000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 66"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Socialising, blending in and gathering rumours in informal settings.",
+        "shortdescr": "Socialising, blending in and gathering rumours in informal settings.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Carouse",
+        "name": "Carouse",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604280,
+        "modifiedTime": 1757178604280,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Carouse",
+      "_id": "OFq55gsGgakrIxoF",
+      "sort": 1700000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 66"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Lies, disguise, sleight of hand and misdirection.",
+        "shortdescr": "Lies, disguise, sleight of hand and misdirection.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Deception",
+        "name": "Deception",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604303,
+        "modifiedTime": 1757178604303,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Deception",
+      "_id": "lDhnyouJcz3msKja",
+      "sort": 1600000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 67"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Handling, manufacturing and using demolitions and explosive ordnance.",
+        "shortdescr": "Handling, manufacturing and using demolitions and explosive ordnance.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Explosives",
+        "name": "Explosives",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604326,
+        "modifiedTime": 1757178604326,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Explosives",
+      "_id": "AHkXljcMv8ibo5qR",
+      "sort": 1500000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Games of chance, odds, and wagering strategy.",
+        "shortdescr": "Games of chance, odds, and wagering strategy.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Gambler",
+        "name": "Gambler",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604352,
+        "modifiedTime": 1757178604352,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Gambler",
+      "_id": "9E9KLGmjZ91FvGBK",
+      "sort": 1400000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Observation, forensics and detailed analysis to find clues and patterns.",
+        "shortdescr": "Observation, forensics and detailed analysis to find clues and patterns.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Investigate",
+        "name": "Investigate",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604378,
+        "modifiedTime": 1757178604378,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Investigate",
+      "_id": "kDs4BfPSWSPtYi0k",
+      "sort": 1300000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Commanding others, directing actions and maintaining morale.",
+        "shortdescr": "Commanding others, directing actions and maintaining morale.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Leadership",
+        "name": "Leadership",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604409,
+        "modifiedTime": 1757178604409,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Leadership",
+      "_id": "HPssf4XRsxUJYqpX",
+      "sort": 1200000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Repairing and maintaining machines, vehicles and equipment.",
+        "shortdescr": "Repairing and maintaining machines, vehicles and equipment.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Mechanic",
+        "name": "Mechanic",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604436,
+        "modifiedTime": 1757178604436,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Mechanic",
+      "_id": "HOGKob6Rq0F63uJ9",
+      "sort": 1100000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "First aid, treatment and medical procedures.",
+        "shortdescr": "First aid, treatment and medical procedures.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Medic",
+        "name": "Medic",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604464,
+        "modifiedTime": 1757178604464,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Medic",
+      "_id": "cJcBcUdbr6VZOxc6",
+      "sort": 1000000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Overland and surface navigation; maps, landmarks and routes.",
+        "shortdescr": "Overland and surface navigation; maps, landmarks and routes.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Navigation",
+        "name": "Navigation",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604499,
+        "modifiedTime": 1757178604499,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Navigation",
+      "_id": "WzRMJZGij1KeKt9n",
+      "sort": 900000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 64–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "",
+        "shortdescr": "",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Persuade",
+        "name": "Persuade",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604536,
+        "modifiedTime": 1757178604536,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Persuade",
+      "_id": "y2O4mpzCFdoGH4F7",
+      "sort": 800000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Spotting threats, scouting and gathering intelligence; stealthy observation.",
+        "shortdescr": "Spotting threats, scouting and gathering intelligence; stealthy observation.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Recon",
+        "name": "Recon",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604563,
+        "modifiedTime": 1757178604563,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Recon",
+      "_id": "Kkz64xQKsJdhYaZa",
+      "sort": 700000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Moving quietly, hiding and avoiding detection.",
+        "shortdescr": "Moving quietly, hiding and avoiding detection.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Stealth",
+        "name": "Stealth",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604597,
+        "modifiedTime": 1757178604597,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Stealth",
+      "_id": "PtnWhvwSUr9LDgMi",
+      "sort": 600000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 66"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Attending passengers; service, cuisine and high‑society protocol aboard ship.",
+        "shortdescr": "Attending passengers; service, cuisine and high‑society protocol aboard ship.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Steward",
+        "name": "Steward",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604632,
+        "modifiedTime": 1757178604632,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Steward",
+      "_id": "Azi8VyZkjkCDM6o9",
+      "sort": 500000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 66"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Criminal/underworld contacts, finding black markets and avoiding trouble.",
+        "shortdescr": "Criminal/underworld contacts, finding black markets and avoiding trouble.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Streetwise",
+        "name": "Streetwise",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604673,
+        "modifiedTime": 1757178604673,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Streetwise",
+      "_id": "lgOSphYP79m3N7LW",
+      "sort": 400000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Enduring hostile environments; finding food, water and shelter.",
+        "shortdescr": "Enduring hostile environments; finding food, water and shelter.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Survival",
+        "name": "Survival",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604704,
+        "modifiedTime": 1757178604704,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Survival",
+      "_id": "avXA8VXLgwyObwDY",
+      "sort": 300000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of vacc suits and working in vacuum/hostile atmospheres.",
+        "shortdescr": "Operation of vacc suits and working in vacuum/hostile atmospheres.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Vacc Suit",
+        "name": "Vacc Suit",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "MqUMdxb4Xikaribc",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178604735,
+        "modifiedTime": 1757178604735,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Vacc Suit",
+      "_id": "RGKdVBEz1OYxYErv",
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 64"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Care, handling and training of animals; includes veterinary medicine. Specialization: Handling and riding trained animals; control in stressful situations.",
+        "shortdescr": "Care, handling and training of animals; includes veterinary medicine.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Animals",
+        "name": "Animals (handling)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "1FTgSs3AfXqpDGpU",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178614382,
+        "modifiedTime": 1757178614382,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Animals (handling)",
+      "_id": "YeAApQ6H3s83LlIV",
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 64"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Care, handling and training of animals; includes veterinary medicine. Specialization: Taming and training animals, including alien creatures.",
+        "shortdescr": "Care, handling and training of animals; includes veterinary medicine.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Animals",
+        "name": "Animals (training)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "1FTgSs3AfXqpDGpU",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178614413,
+        "modifiedTime": 1757178614413,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Animals (training)",
+      "_id": "2afYMNXmyyePyuOH",
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 64"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Care, handling and training of animals; includes veterinary medicine. Specialization: Veterinary medicine and animal care; use Medic rules with Animals (veterinary).",
+        "shortdescr": "Care, handling and training of animals; includes veterinary medicine.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Animals",
+        "name": "Animals (veterinary)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "1FTgSs3AfXqpDGpU",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178614447,
+        "modifiedTime": 1757178614447,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Animals (veterinary)",
+      "_id": "UNbij2hsgUtWCmmJ",
+      "sort": 150000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 65"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Training in creative arts; performance, composition and production across various media. Specialization: Recording and producing clear, aesthetic holograms covertly or openly.",
+        "shortdescr": "Training in creative arts; performance, composition and production across various media.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Art",
+        "name": "Art (holography)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "dqSKQRHuJuOyCvaK",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178617054,
+        "modifiedTime": 1757178617054,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Art (holography)",
+      "_id": "FlDqhGziefjECgfH",
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 65"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Training in creative arts; performance, composition and production across various media. Specialization: Playing specific musical instruments with skill.",
+        "shortdescr": "Training in creative arts; performance, composition and production across various media.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Art",
+        "name": "Art (instrument)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "dqSKQRHuJuOyCvaK",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178617097,
+        "modifiedTime": 1757178617097,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Art (instrument)",
+      "_id": "5ci0ETtSdaCy01up",
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 65"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Training in creative arts; performance, composition and production across various media. Specialization: Acting, dance and singing for stage, screen or holo.",
+        "shortdescr": "Training in creative arts; performance, composition and production across various media.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Art",
+        "name": "Art (performer)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "dqSKQRHuJuOyCvaK",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178617133,
+        "modifiedTime": 1757178617133,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Art (performer)",
+      "_id": "jTQdYNtuSdfrutMW",
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 65"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Training in creative arts; performance, composition and production across various media. Specialization: Painting, sculpture and other visual arts.",
+        "shortdescr": "Training in creative arts; performance, composition and production across various media.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Art",
+        "name": "Art (visual media)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "dqSKQRHuJuOyCvaK",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178617171,
+        "modifiedTime": 1757178617171,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Art (visual media)",
+      "_id": "LcnhrDRmyNB5nTyY",
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 65"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Training in creative arts; performance, composition and production across various media. Specialization: Writing inspiring or persuasive text and literature.",
+        "shortdescr": "Training in creative arts; performance, composition and production across various media.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Art",
+        "name": "Art (write)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "dqSKQRHuJuOyCvaK",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178617222,
+        "modifiedTime": 1757178617222,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Art (write)",
+      "_id": "9c05tj596Qh4coao",
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 65"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Physical training; augments STR/DEX/END for feats, movement and adverse gravity work. Specialization: Climbing, sprinting, throwing; key in low/zero‑G environments.",
+        "shortdescr": "Physical training; augments STR/DEX/END for feats, movement and adverse gravity work.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Athletics",
+        "name": "Athletics (dexterity)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "p3qqCKHxgKXnvsSP",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178620587,
+        "modifiedTime": 1757178620587,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Athletics (dexterity)",
+      "_id": "e83r6Sc0RlaijYEB",
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 65"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Physical training; augments STR/DEX/END for feats, movement and adverse gravity work. Specialization: Long‑distance running, hiking, swimming.",
+        "shortdescr": "Physical training; augments STR/DEX/END for feats, movement and adverse gravity work.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Athletics",
+        "name": "Athletics (endurance)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "p3qqCKHxgKXnvsSP",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178620638,
+        "modifiedTime": 1757178620638,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Athletics (endurance)",
+      "_id": "j8kfzNW5DVNSz1Jk",
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 65"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Physical training; augments STR/DEX/END for feats, movement and adverse gravity work. Specialization: Feats of strength and high‑G exertion.",
+        "shortdescr": "Physical training; augments STR/DEX/END for feats, movement and adverse gravity work.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Athletics",
+        "name": "Athletics (strength)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "p3qqCKHxgKXnvsSP",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178620691,
+        "modifiedTime": 1757178620691,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Athletics (strength)",
+      "_id": "Np06Dm26HnxBv3At",
+      "sort": 150000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 66"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of ground and similar vehicles depending on propulsion type. Specialization: Hovercraft operation over land or water.",
+        "shortdescr": "Operation of ground and similar vehicles depending on propulsion type.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Drive",
+        "name": "Drive (hovercraft)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "hZbrmJ5sVzAjmRga",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178623784,
+        "modifiedTime": 1757178623784,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Drive (hovercraft)",
+      "_id": "mUHttV1dXuLMrrW8",
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 66"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of ground and similar vehicles depending on propulsion type. Specialization: Burrowing/mole vehicles operating underground.",
+        "shortdescr": "Operation of ground and similar vehicles depending on propulsion type.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Drive",
+        "name": "Drive (mole)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "hZbrmJ5sVzAjmRga",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178623836,
+        "modifiedTime": 1757178623836,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Drive (mole)",
+      "_id": "dzom7FkaMvAbfMnM",
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 66"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of ground and similar vehicles depending on propulsion type. Specialization: Tracked vehicles (e.g., tanks).",
+        "shortdescr": "Operation of ground and similar vehicles depending on propulsion type.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Drive",
+        "name": "Drive (tracked)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "hZbrmJ5sVzAjmRga",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178623879,
+        "modifiedTime": 1757178623879,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Drive (tracked)",
+      "_id": "gqev9CBR12dgfwMg",
+      "sort": 150000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 66"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of ground and similar vehicles depending on propulsion type. Specialization: Legged/walker vehicles traversing rough terrain.",
+        "shortdescr": "Operation of ground and similar vehicles depending on propulsion type.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Drive",
+        "name": "Drive (walker)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "hZbrmJ5sVzAjmRga",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178623951,
+        "modifiedTime": 1757178623951,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Drive (walker)",
+      "_id": "Y1uZaM9Tk5j7VPmA",
+      "sort": 125000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 66"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of ground and similar vehicles depending on propulsion type. Specialization: Automobiles, groundcars and trucks.",
+        "shortdescr": "Operation of ground and similar vehicles depending on propulsion type.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Drive",
+        "name": "Drive (wheeled)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "hZbrmJ5sVzAjmRga",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178624002,
+        "modifiedTime": 1757178624002,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Drive (wheeled)",
+      "_id": "w202aRm5EwkD4OLF",
+      "sort": 112500,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 66"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation/repair of computers, comms, sensors and remote systems. Specialization: Telecommunications, protocols, jamming and signal tricks.",
+        "shortdescr": "Operation/repair of computers, comms, sensors and remote systems.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Electronics",
+        "name": "Electronics (comms)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "Xn4YCPxYnfggweNo",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178628102,
+        "modifiedTime": 1757178628102,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Electronics (comms)",
+      "_id": "mKUsYly7sDi9aMqG",
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 66"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation/repair of computers, comms, sensors and remote systems. Specialization: Operating and programming computers; hacking and security.",
+        "shortdescr": "Operation/repair of computers, comms, sensors and remote systems.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Electronics",
+        "name": "Electronics (computers)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "Xn4YCPxYnfggweNo",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178628149,
+        "modifiedTime": 1757178628149,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Electronics (computers)",
+      "_id": "DieuKSXINbME7D2N",
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 66"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation/repair of computers, comms, sensors and remote systems. Specialization: Telepresence control of drones, robots, missiles.",
+        "shortdescr": "Operation/repair of computers, comms, sensors and remote systems.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Electronics",
+        "name": "Electronics (remote ops)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "Xn4YCPxYnfggweNo",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178628187,
+        "modifiedTime": 1757178628187,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Electronics (remote ops)",
+      "_id": "5kxlMOoT7PoStf09",
+      "sort": 150000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 66"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation/repair of computers, comms, sensors and remote systems. Specialization: Operating and interpreting sensor systems.",
+        "shortdescr": "Operation/repair of computers, comms, sensors and remote systems.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Electronics",
+        "name": "Electronics (sensors)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "Xn4YCPxYnfggweNo",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178628229,
+        "modifiedTime": 1757178628229,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Electronics (sensors)",
+      "_id": "tdWllBHjRfxE3RUA",
+      "sort": 300000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 67"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Maintaining, repairing and overhauling starship systems and power plants. Specialization: Maintaining jump drives.",
+        "shortdescr": "Maintaining, repairing and overhauling starship systems and power plants.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Engineer",
+        "name": "Engineer (j-drive)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "QKSgmfJubOJ0i6L1",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178647130,
+        "modifiedTime": 1757178647130,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Engineer (j-drive)",
+      "_id": "Ci4f3B0j3kGEMG0M",
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 67"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Maintaining, repairing and overhauling starship systems and power plants. Specialization: Life support systems upkeep and repair.",
+        "shortdescr": "Maintaining, repairing and overhauling starship systems and power plants.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Engineer",
+        "name": "Engineer (life support)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "QKSgmfJubOJ0i6L1",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178647178,
+        "modifiedTime": 1757178647178,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Engineer (life support)",
+      "_id": "SxP8DHSqpIFxd96V",
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 67"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Maintaining, repairing and overhauling starship systems and power plants. Specialization: Maintaining manoeuvre drives.",
+        "shortdescr": "Maintaining, repairing and overhauling starship systems and power plants.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Engineer",
+        "name": "Engineer (m-drive)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "QKSgmfJubOJ0i6L1",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178647220,
+        "modifiedTime": 1757178647220,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Engineer (m-drive)",
+      "_id": "mzzVoLJLitCK9l5R",
+      "sort": 300000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 67"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Maintaining, repairing and overhauling starship systems and power plants. Specialization: Power plant and distribution maintenance.",
+        "shortdescr": "Maintaining, repairing and overhauling starship systems and power plants.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Engineer",
+        "name": "Engineer (power)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "QKSgmfJubOJ0i6L1",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178647276,
+        "modifiedTime": 1757178647276,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Engineer (power)",
+      "_id": "FUUT7bwLqL64aW5e",
+      "sort": 250000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of atmospheric craft (wings, rotors, grav, etc.). Specialization: Lighter‑than‑air craft operations.",
+        "shortdescr": "Operation of atmospheric craft (wings, rotors, grav, etc.).",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Flyer",
+        "name": "Flyer (airship)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "IgT3HOxyIXoDGaqL",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178649830,
+        "modifiedTime": 1757178649830,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Flyer (airship)",
+      "_id": "6f0rT3sW4yugqZk3",
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of atmospheric craft (wings, rotors, grav, etc.). Specialization: Grav vehicles (e.g., air/rafts, g/bikes).",
+        "shortdescr": "Operation of atmospheric craft (wings, rotors, grav, etc.).",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Flyer",
+        "name": "Flyer (grav)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "IgT3HOxyIXoDGaqL",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178649879,
+        "modifiedTime": 1757178649879,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Flyer (grav)",
+      "_id": "4CmHBTO8XXNmpMIF",
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of atmospheric craft (wings, rotors, grav, etc.). Specialization: Flapping‑wing aircraft.",
+        "shortdescr": "Operation of atmospheric craft (wings, rotors, grav, etc.).",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Flyer",
+        "name": "Flyer (ornithopter)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "IgT3HOxyIXoDGaqL",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178649948,
+        "modifiedTime": 1757178649948,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Flyer (ornithopter)",
+      "_id": "ul0vAUAaskVZ01NL",
+      "sort": 300000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of atmospheric craft (wings, rotors, grav, etc.). Specialization: Rotorcraft and helicopters.",
+        "shortdescr": "Operation of atmospheric craft (wings, rotors, grav, etc.).",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Flyer",
+        "name": "Flyer (rotor)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "IgT3HOxyIXoDGaqL",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178649994,
+        "modifiedTime": 1757178649994,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Flyer (rotor)",
+      "_id": "iUSRQKiBZgw1moZl",
+      "sort": 250000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of atmospheric craft (wings, rotors, grav, etc.). Specialization: Fixed‑wing aircraft and gliders.",
+        "shortdescr": "Operation of atmospheric craft (wings, rotors, grav, etc.).",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Flyer",
+        "name": "Flyer (wing)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "IgT3HOxyIXoDGaqL",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178650043,
+        "modifiedTime": 1757178650043,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Flyer (wing)",
+      "_id": "Pwd8o7AE0H69W4An",
+      "sort": 400000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Personal-scale ranged firearms (archaic, slug, energy). Specialization: Bows, crossbows and other non‑thrown archaic ranged weapons.",
+        "shortdescr": "Personal-scale ranged firearms (archaic, slug, energy).",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Gun Combat",
+        "name": "Gun Combat (archaic)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "YMOT3SS8DMxotoD4",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178653529,
+        "modifiedTime": 1757178653529,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Gun Combat (archaic)",
+      "_id": "ABRk5Aep41vuSTJU",
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Personal-scale ranged firearms (archaic, slug, energy). Specialization: Lasers, plasma and energy small arms.",
+        "shortdescr": "Personal-scale ranged firearms (archaic, slug, energy).",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Gun Combat",
+        "name": "Gun Combat (energy)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "YMOT3SS8DMxotoD4",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178653594,
+        "modifiedTime": 1757178653594,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Gun Combat (energy)",
+      "_id": "PnSIDW0zEhrsXoIn",
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Personal-scale ranged firearms (archaic, slug, energy). Specialization: Slug throwers (autorifles, gauss, etc.).",
+        "shortdescr": "Personal-scale ranged firearms (archaic, slug, energy).",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Gun Combat",
+        "name": "Gun Combat (slug)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "YMOT3SS8DMxotoD4",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178653658,
+        "modifiedTime": 1757178653658,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Gun Combat (slug)",
+      "_id": "HeLVjl7LbYwW0NCd",
+      "sort": 150000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of ship-mounted weapons (turrets, ortillery, screens, capital). Specialization: Bay and spinal mount weaponry.",
+        "shortdescr": "Operation of ship-mounted weapons (turrets, ortillery, screens, capital).",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Gunner",
+        "name": "Gunner (capital)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "62oKzwCCaanzpMEk",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178656467,
+        "modifiedTime": 1757178656467,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Gunner (capital)",
+      "_id": "HACzvdIyMhHpMgvh",
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of ship-mounted weapons (turrets, ortillery, screens, capital). Specialization: Orbital artillery for planetary bombardment.",
+        "shortdescr": "Operation of ship-mounted weapons (turrets, ortillery, screens, capital).",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Gunner",
+        "name": "Gunner (ortillery)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "62oKzwCCaanzpMEk",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178656520,
+        "modifiedTime": 1757178656520,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Gunner (ortillery)",
+      "_id": "QvBkDyjeM4UsCm78",
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of ship-mounted weapons (turrets, ortillery, screens, capital). Specialization: Operating energy screens (meson, Black Globe).",
+        "shortdescr": "Operation of ship-mounted weapons (turrets, ortillery, screens, capital).",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Gunner",
+        "name": "Gunner (screen)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "62oKzwCCaanzpMEk",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178656570,
+        "modifiedTime": 1757178656570,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Gunner (screen)",
+      "_id": "KuldZT1XP19A5zCs",
+      "sort": 150000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of ship-mounted weapons (turrets, ortillery, screens, capital). Specialization: Ship turret operation (beam, missile, sand, etc.).",
+        "shortdescr": "Operation of ship-mounted weapons (turrets, ortillery, screens, capital).",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Gunner",
+        "name": "Gunner (turret)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "62oKzwCCaanzpMEk",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178656651,
+        "modifiedTime": 1757178656651,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Gunner (turret)",
+      "_id": "VRX6CcmdSrNZAjLQ",
+      "sort": 175000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Portable and mounted destructive weapons; artillery and vehicle guns. Specialization: Indirect‑fire guns, mortars, howitzers.",
+        "shortdescr": "Portable and mounted destructive weapons; artillery and vehicle guns.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Heavy Weapons",
+        "name": "Heavy Weapons (artillery)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "USuBKxVHxRLAkADD",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178659079,
+        "modifiedTime": 1757178659079,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Heavy Weapons (artillery)",
+      "_id": "OX0nxSztegLfz9dB",
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Portable and mounted destructive weapons; artillery and vehicle guns. Specialization: Portable missile, fusion and plasma weapons.",
+        "shortdescr": "Portable and mounted destructive weapons; artillery and vehicle guns.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Heavy Weapons",
+        "name": "Heavy Weapons (portable)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "USuBKxVHxRLAkADD",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178659138,
+        "modifiedTime": 1757178659138,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Heavy Weapons (portable)",
+      "_id": "2d9kTFEEPLYH9S6w",
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Portable and mounted destructive weapons; artillery and vehicle guns. Specialization: Tank guns, autocannon and vehicle mounts.",
+        "shortdescr": "Portable and mounted destructive weapons; artillery and vehicle guns.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Heavy Weapons",
+        "name": "Heavy Weapons (vehicle)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "USuBKxVHxRLAkADD",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178659240,
+        "modifiedTime": 1757178659240,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Heavy Weapons (vehicle)",
+      "_id": "NL4YjqTxemAf2IHY",
+      "sort": 150000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Fluency in specific tongues; speaking, reading and writing. Specialization: Common interstellar trade tongue.",
+        "shortdescr": "Fluency in specific tongues; speaking, reading and writing.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Language",
+        "name": "Language (galanglic)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "OylPsZ0AuQ9m4pWF",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178665691,
+        "modifiedTime": 1757178665691,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Language (galanglic)",
+      "_id": "sdBeBbfWG1LJ5gNK",
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Fluency in specific tongues; speaking, reading and writing. Specialization: Vargr language (Gvegh).",
+        "shortdescr": "Fluency in specific tongues; speaking, reading and writing.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Language",
+        "name": "Language (gvegh)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "OylPsZ0AuQ9m4pWF",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178665745,
+        "modifiedTime": 1757178665745,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Language (gvegh)",
+      "_id": "6jsyQM4bOmjmUncP",
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Fluency in specific tongues; speaking, reading and writing. Specialization: Another specific language.",
+        "shortdescr": "Fluency in specific tongues; speaking, reading and writing.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Language",
+        "name": "Language (other)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "OylPsZ0AuQ9m4pWF",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178665797,
+        "modifiedTime": 1757178665797,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Language (other)",
+      "_id": "xShHx4pKleGp8M0F",
+      "sort": 300000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Fluency in specific tongues; speaking, reading and writing. Specialization: Droyne language.",
+        "shortdescr": "Fluency in specific tongues; speaking, reading and writing.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Language",
+        "name": "Language (oynprith)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "OylPsZ0AuQ9m4pWF",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178665863,
+        "modifiedTime": 1757178665863,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Language (oynprith)",
+      "_id": "pkerQsL4thyZWCIe",
+      "sort": 250000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Fluency in specific tongues; speaking, reading and writing. Specialization: Aslan language (Trokh).",
+        "shortdescr": "Fluency in specific tongues; speaking, reading and writing.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Language",
+        "name": "Language (trokh)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "OylPsZ0AuQ9m4pWF",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178665959,
+        "modifiedTime": 1757178665959,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Language (trokh)",
+      "_id": "Ae56mI9xHfUBlMsp",
+      "sort": 400000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Fluency in specific tongues; speaking, reading and writing. Specialization: Vilani language.",
+        "shortdescr": "Fluency in specific tongues; speaking, reading and writing.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Language",
+        "name": "Language (vilani)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "OylPsZ0AuQ9m4pWF",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178666024,
+        "modifiedTime": 1757178666024,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Language (vilani)",
+      "_id": "9z1he93WAUEBggDK",
+      "sort": 262500,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Fluency in specific tongues; speaking, reading and writing. Specialization: Zhodani language (Zdetl).",
+        "shortdescr": "Fluency in specific tongues; speaking, reading and writing.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Language",
+        "name": "Language (zdetl)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "OylPsZ0AuQ9m4pWF",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178666095,
+        "modifiedTime": 1757178666095,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Language (zdetl)",
+      "_id": "Dqy4Go7O8lRQj6Au",
+      "sort": 275000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Close combat with natural weapons, blades and bludgeons, including unarmed. Specialization: Swords, knives and edged weapons.",
+        "shortdescr": "Close combat with natural weapons, blades and bludgeons, including unarmed.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Melee",
+        "name": "Melee (blade)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WunN5uC5CRScw1g0",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178669597,
+        "modifiedTime": 1757178669597,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Melee (blade)",
+      "_id": "0bmCGDZwiWo1IF9P",
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Close combat with natural weapons, blades and bludgeons, including unarmed. Specialization: Clubs, staves and blunt weapons.",
+        "shortdescr": "Close combat with natural weapons, blades and bludgeons, including unarmed.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Melee",
+        "name": "Melee (bludgeon)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WunN5uC5CRScw1g0",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178669655,
+        "modifiedTime": 1757178669655,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Melee (bludgeon)",
+      "_id": "BiRUI0g4VITMTZrO",
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Close combat with natural weapons, blades and bludgeons, including unarmed. Specialization: Claws, teeth or other natural weapons.",
+        "shortdescr": "Close combat with natural weapons, blades and bludgeons, including unarmed.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Melee",
+        "name": "Melee (natural)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WunN5uC5CRScw1g0",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178669741,
+        "modifiedTime": 1757178669741,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Melee (natural)",
+      "_id": "ugX6eNvJSCFWmeDw",
+      "sort": 150000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Close combat with natural weapons, blades and bludgeons, including unarmed. Specialization: Punches, grapples and natural body strikes.",
+        "shortdescr": "Close combat with natural weapons, blades and bludgeons, including unarmed.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Melee",
+        "name": "Melee (unarmed)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WunN5uC5CRScw1g0",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178669803,
+        "modifiedTime": 1757178669803,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Melee (unarmed)",
+      "_id": "yeZkGVbziff4PA8e",
+      "sort": 300000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Handling spacecraft/small craft in space and atmosphere, docking/landing and manoeuvres. Specialization: Large capital ships operations.",
+        "shortdescr": "Handling spacecraft/small craft in space and atmosphere, docking/landing and manoeuvres.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Pilot",
+        "name": "Pilot (capital ships)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "GHj2pnVFA7YyWj50",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178674421,
+        "modifiedTime": 1757178674421,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Pilot (capital ships)",
+      "_id": "9JxZyKdFHqLOV2Xm",
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Handling spacecraft/small craft in space and atmosphere, docking/landing and manoeuvres. Specialization: Small craft (fighters, cutters, shuttles).",
+        "shortdescr": "Handling spacecraft/small craft in space and atmosphere, docking/landing and manoeuvres.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Pilot",
+        "name": "Pilot (small craft)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "GHj2pnVFA7YyWj50",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178674477,
+        "modifiedTime": 1757178674477,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Pilot (small craft)",
+      "_id": "PWdFQJrbIMmCWXs5",
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 68"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Handling spacecraft/small craft in space and atmosphere, docking/landing and manoeuvres. Specialization: Starships and spacecraft operations.",
+        "shortdescr": "Handling spacecraft/small craft in space and atmosphere, docking/landing and manoeuvres.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Pilot",
+        "name": "Pilot (spacecraft)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "GHj2pnVFA7YyWj50",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178674537,
+        "modifiedTime": 1757178674537,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Pilot (spacecraft)",
+      "_id": "vTEP4oWLzowFiWsh",
+      "sort": 300000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Applied trades and vocations; practical industrial skills. Specialization: Asteroid mining and related trades.",
+        "shortdescr": "Applied trades and vocations; practical industrial skills.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Profession",
+        "name": "Profession (belter)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "Oic0FCylDJwjBe29",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178676893,
+        "modifiedTime": 1757178676893,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Profession (belter)",
+      "_id": "bN8ZVV0EWGiJEd98",
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Applied trades and vocations; practical industrial skills. Specialization: Biotech manufacturing and handling.",
+        "shortdescr": "Applied trades and vocations; practical industrial skills.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Profession",
+        "name": "Profession (biologicals)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "Oic0FCylDJwjBe29",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178676951,
+        "modifiedTime": 1757178676951,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Profession (biologicals)",
+      "_id": "tI5PLRyFlKesQ9j3",
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Applied trades and vocations; practical industrial skills. Specialization: Infrastructure and construction planning.",
+        "shortdescr": "Applied trades and vocations; practical industrial skills.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Profession",
+        "name": "Profession (civil engineering)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "Oic0FCylDJwjBe29",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178677018,
+        "modifiedTime": 1757178677018,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Profession (civil engineering)",
+      "_id": "og8JOXc9AfhEySDn",
+      "sort": 300000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Applied trades and vocations; practical industrial skills. Specialization: On‑site construction skills.",
+        "shortdescr": "Applied trades and vocations; practical industrial skills.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Profession",
+        "name": "Profession (construction)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "Oic0FCylDJwjBe29",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178677130,
+        "modifiedTime": 1757178677130,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Profession (construction)",
+      "_id": "4gl5jMB86ZlMxuzQ",
+      "sort": 250000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Applied trades and vocations; practical industrial skills. Specialization: Soilless cultivation and food production.",
+        "shortdescr": "Applied trades and vocations; practical industrial skills.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Profession",
+        "name": "Profession (hydroponics)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "Oic0FCylDJwjBe29",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178677201,
+        "modifiedTime": 1757178677201,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Profession (hydroponics)",
+      "_id": "ZY1mD4EQqK3TG4xh",
+      "sort": 400000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Applied trades and vocations; practical industrial skills. Specialization: Another specific profession.",
+        "shortdescr": "Applied trades and vocations; practical industrial skills.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Profession",
+        "name": "Profession (other)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "Oic0FCylDJwjBe29",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178677280,
+        "modifiedTime": 1757178677280,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Profession (other)",
+      "_id": "QEdrP2ZGwXDLrf5K",
+      "sort": 350000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Applied trades and vocations; practical industrial skills. Specialization: Plastics and synthetic materials processes.",
+        "shortdescr": "Applied trades and vocations; practical industrial skills.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Profession",
+        "name": "Profession (polymers)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "Oic0FCylDJwjBe29",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178677352,
+        "modifiedTime": 1757178677352,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Profession (polymers)",
+      "_id": "P7sx3GQgmrLQZQn4",
+      "sort": 275000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Academic disciplines and research methods across multiple fields. Specialization: Excavation methods and analysis of past cultures.",
+        "shortdescr": "Academic disciplines and research methods across multiple fields.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Science",
+        "name": "Science (archaeology)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WP7YSVQnc7P7N6aG",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178682143,
+        "modifiedTime": 1757178682143,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Science (archaeology)",
+      "_id": "5cntrIjeyZlajyZz",
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Academic disciplines and research methods across multiple fields. Specialization: Observation of celestial bodies and phenomena.",
+        "shortdescr": "Academic disciplines and research methods across multiple fields.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Science",
+        "name": "Science (astronomy)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WP7YSVQnc7P7N6aG",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178682209,
+        "modifiedTime": 1757178682209,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Science (astronomy)",
+      "_id": "AOO33Q6g3I6QNum2",
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Academic disciplines and research methods across multiple fields. Specialization: Study of living organisms and ecosystems.",
+        "shortdescr": "Academic disciplines and research methods across multiple fields.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Science",
+        "name": "Science (biology)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WP7YSVQnc7P7N6aG",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178682276,
+        "modifiedTime": 1757178682276,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Science (biology)",
+      "_id": "BWX2vAlodtss1KF0",
+      "sort": 300000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Academic disciplines and research methods across multiple fields. Specialization: Substances, reactions and materials.",
+        "shortdescr": "Academic disciplines and research methods across multiple fields.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Science",
+        "name": "Science (chemistry)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WP7YSVQnc7P7N6aG",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178682385,
+        "modifiedTime": 1757178682385,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Science (chemistry)",
+      "_id": "qFq6pWx15s6ciCMG",
+      "sort": 250000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Academic disciplines and research methods across multiple fields. Specialization: Origins and structure of the universe.",
+        "shortdescr": "Academic disciplines and research methods across multiple fields.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Science",
+        "name": "Science (cosmology)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WP7YSVQnc7P7N6aG",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178682483,
+        "modifiedTime": 1757178682483,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Science (cosmology)",
+      "_id": "Fu9uiOonjtN9FdoZ",
+      "sort": 400000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Academic disciplines and research methods across multiple fields. Specialization: Human‑machine systems and augmentation.",
+        "shortdescr": "Academic disciplines and research methods across multiple fields.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Science",
+        "name": "Science (cybernetics)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WP7YSVQnc7P7N6aG",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178682596,
+        "modifiedTime": 1757178682596,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Science (cybernetics)",
+      "_id": "jWLAlTGNRefjZ8fi",
+      "sort": 275000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Academic disciplines and research methods across multiple fields. Specialization: Markets, trade and resource allocation.",
+        "shortdescr": "Academic disciplines and research methods across multiple fields.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Science",
+        "name": "Science (economics)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WP7YSVQnc7P7N6aG",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178682713,
+        "modifiedTime": 1757178682713,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Science (economics)",
+      "_id": "FS7PCGCA4zKlBbgS",
+      "sort": 271875,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Academic disciplines and research methods across multiple fields. Specialization: Heredity, DNA and manipulation.",
+        "shortdescr": "Academic disciplines and research methods across multiple fields.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Science",
+        "name": "Science (genetics)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WP7YSVQnc7P7N6aG",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178682800,
+        "modifiedTime": 1757178682800,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Science (genetics)",
+      "_id": "WQllQD3tfHrrR1Xf",
+      "sort": 262500,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Academic disciplines and research methods across multiple fields. Specialization: Study of historical events and trends.",
+        "shortdescr": "Academic disciplines and research methods across multiple fields.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Science",
+        "name": "Science (history)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WP7YSVQnc7P7N6aG",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178682878,
+        "modifiedTime": 1757178682878,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Science (history)",
+      "_id": "SYxrP5mb7Q8CZMPn",
+      "sort": 287500,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Academic disciplines and research methods across multiple fields. Specialization: Structure and evolution of language.",
+        "shortdescr": "Academic disciplines and research methods across multiple fields.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Science",
+        "name": "Science (linguistics)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WP7YSVQnc7P7N6aG",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178682974,
+        "modifiedTime": 1757178682974,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Science (linguistics)",
+      "_id": "r5DnFBvNpZXcZzPz",
+      "sort": 268750,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Academic disciplines and research methods across multiple fields. Specialization: Logic, ethics and epistemology.",
+        "shortdescr": "Academic disciplines and research methods across multiple fields.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Science",
+        "name": "Science (philosophy)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WP7YSVQnc7P7N6aG",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178683050,
+        "modifiedTime": 1757178683050,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Science (philosophy)",
+      "_id": "sY4ZY8AFtGlqg1Ft",
+      "sort": 265625,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Academic disciplines and research methods across multiple fields. Specialization: Matter, energy and fundamental forces.",
+        "shortdescr": "Academic disciplines and research methods across multiple fields.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Science",
+        "name": "Science (physics)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WP7YSVQnc7P7N6aG",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178683128,
+        "modifiedTime": 1757178683128,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Science (physics)",
+      "_id": "ulAasG6Xv3Tgo3xf",
+      "sort": 293750,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Academic disciplines and research methods across multiple fields. Specialization: Planets, geology and atmospheres.",
+        "shortdescr": "Academic disciplines and research methods across multiple fields.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Science",
+        "name": "Science (planetology)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WP7YSVQnc7P7N6aG",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178683223,
+        "modifiedTime": 1757178683223,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Science (planetology)",
+      "_id": "Q7IeYEHaZOuRCCxw",
+      "sort": 290625,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Academic disciplines and research methods across multiple fields. Specialization: Study of psionics (setting‑dependent).",
+        "shortdescr": "Academic disciplines and research methods across multiple fields.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Science",
+        "name": "Science (psionicology)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WP7YSVQnc7P7N6aG",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178683299,
+        "modifiedTime": 1757178683299,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Science (psionicology)",
+      "_id": "6RMkfbkdjBr0Ocyv",
+      "sort": 289063,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Academic disciplines and research methods across multiple fields. Specialization: Mind, behaviour and cognition.",
+        "shortdescr": "Academic disciplines and research methods across multiple fields.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Science",
+        "name": "Science (psychology)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WP7YSVQnc7P7N6aG",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178683373,
+        "modifiedTime": 1757178683373,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Science (psychology)",
+      "_id": "NgrbnbFdgtJxMvQV",
+      "sort": 270313,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Academic disciplines and research methods across multiple fields. Specialization: Autonomous systems design and theory.",
+        "shortdescr": "Academic disciplines and research methods across multiple fields.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Science",
+        "name": "Science (robotics)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WP7YSVQnc7P7N6aG",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178683470,
+        "modifiedTime": 1757178683470,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Science (robotics)",
+      "_id": "HaBVkqx6RjvEEWgQ",
+      "sort": 292188,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Academic disciplines and research methods across multiple fields. Specialization: Study of sophonts and cultures.",
+        "shortdescr": "Academic disciplines and research methods across multiple fields.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Science",
+        "name": "Science (sophontology)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WP7YSVQnc7P7N6aG",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178683546,
+        "modifiedTime": 1757178683546,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Science (sophontology)",
+      "_id": "vXtGULK7NGwnnjKv",
+      "sort": 291407,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 69–70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Academic disciplines and research methods across multiple fields. Specialization: Extraterrestrial life and cultures.",
+        "shortdescr": "Academic disciplines and research methods across multiple fields.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Science",
+        "name": "Science (xenology)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "WP7YSVQnc7P7N6aG",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178683625,
+        "modifiedTime": 1757178683625,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Science (xenology)",
+      "_id": "zuq0tjLlHbl7EySy",
+      "sort": 289844,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of watercraft: personal craft, sail, subs and ships. Specialization: Operation of large ocean‑going ships.",
+        "shortdescr": "Operation of watercraft: personal craft, sail, subs and ships.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Seafarer",
+        "name": "Seafarer (ocean ships)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "2Dk9Mr1pf4rYcrYM",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178687060,
+        "modifiedTime": 1757178687060,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Seafarer (ocean ships)",
+      "_id": "Ecd5h1aZOOvbxtZG",
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of watercraft: personal craft, sail, subs and ships. Specialization: Small craft such as boats and scooters.",
+        "shortdescr": "Operation of watercraft: personal craft, sail, subs and ships.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Seafarer",
+        "name": "Seafarer (personal)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "2Dk9Mr1pf4rYcrYM",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178687142,
+        "modifiedTime": 1757178687142,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Seafarer (personal)",
+      "_id": "U7EtSD5QIgYPelk9",
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of watercraft: personal craft, sail, subs and ships. Specialization: Wind‑powered sailing vessels.",
+        "shortdescr": "Operation of watercraft: personal craft, sail, subs and ships.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Seafarer",
+        "name": "Seafarer (sail)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "2Dk9Mr1pf4rYcrYM",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178687255,
+        "modifiedTime": 1757178687255,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Seafarer (sail)",
+      "_id": "4gG1Roy8uRt4MvvG",
+      "sort": 300000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Operation of watercraft: personal craft, sail, subs and ships. Specialization: Underwater craft operations.",
+        "shortdescr": "Operation of watercraft: personal craft, sail, subs and ships.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Seafarer",
+        "name": "Seafarer (submarine)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "2Dk9Mr1pf4rYcrYM",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178687347,
+        "modifiedTime": 1757178687347,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Seafarer (submarine)",
+      "_id": "MmVsJ680e6UqNc1p",
+      "sort": 250000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Planning and executing military/naval operations. Specialization: Land/air combined arms planning.",
+        "shortdescr": "Planning and executing military/naval operations.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Tactics",
+        "name": "Tactics (military)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "hOhZV86ROjBKSrnJ",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178689539,
+        "modifiedTime": 1757178689539,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Tactics (military)",
+      "_id": "fSgkMqXQFY93ga2Y",
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "type": "skills",
+      "system": {
+        "docReference": [
+          "Skills — p. 70"
+        ],
+        "pdfReference": {
+          "type": "",
+          "href": "",
+          "label": ""
+        },
+        "value": 0,
+        "characteristic": "NONE",
+        "type": "skills",
+        "description": "Planning and executing military/naval operations. Specialization: Fleet and space/naval operations planning.",
+        "shortdescr": "Planning and executing military/naval operations.",
+        "subtype": "",
+        "key": "key",
+        "difficulty": "Average",
+        "rolltype": "Normal",
+        "trainingNotes": "",
+        "groupLabel": "Tactics",
+        "name": "Tactics (naval)",
+        "priorType": "unknown",
+        "prereq": ""
+      },
+      "flags": {},
+      "img": "icons/svg/mystery-man.svg",
+      "effects": [],
+      "folder": "hOhZV86ROjBKSrnJ",
+      "_stats": {
+        "coreVersion": "13.348",
+        "systemId": "twodsix",
+        "systemVersion": "6.6.0",
+        "createdTime": 1757178689613,
+        "modifiedTime": 1757178689613,
+        "lastModifiedBy": "6euA2b02XGsAbxwa"
+      },
+      "name": "Tactics (naval)",
+      "_id": "rCDjveYCmfow6a1P",
+      "sort": 200000,
+      "ownership": {
+        "default": 0
+      }
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "13.348",
+    "systemId": "twodsix",
+    "systemVersion": "6.6.0",
+    "createdTime": 1757178598130,
+    "modifiedTime": 1757178598130,
+    "lastModifiedBy": "6euA2b02XGsAbxwa",
+    "exportSource": {
+      "worldId": "traveller",
+      "uuid": "Actor.CuSjV0Na3f1fwL4A",
+      "coreVersion": "13.348",
+      "systemId": "twodsix",
+      "systemVersion": "6.6.0"
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}
