@@ -29,9 +29,6 @@ export const HomeMenu: React.FC<HomeMenuProps> = ({ onSelectCreationMethod }) =>
             Create your character for the classic science fiction RPG. 
             Choose your preferred creation method and begin your journey among the stars.
           </p>
-          <div className="mt-6 text-sm text-slate-400">
-            Based on Mongoose Traveller 2nd Edition
-          </div>
         </div>
 
         {/* Creation Method Options */}
@@ -58,7 +55,6 @@ export const HomeMenu: React.FC<HomeMenuProps> = ({ onSelectCreationMethod }) =>
                   <li>Balanced characters ready to play</li>
                   <li>Customization options available</li>
                   <li>Faster creation for experienced players</li>
-                  <li>NPC generation support</li>
                 </ul>
               </div>
 
@@ -221,8 +217,6 @@ export const HomeMenu: React.FC<HomeMenuProps> = ({ onSelectCreationMethod }) =>
         <div className="mt-16 text-center text-slate-500 text-sm">
           <p>
             This character creator is a fan-made tool for Mongoose Traveller 2nd Edition.
-            <br />
-            Traveller is a trademark of Far Future Enterprises and used under license.
           </p>
         </div>
       </div>
